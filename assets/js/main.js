@@ -5,44 +5,48 @@ const copy = {
     navProjects: "Proyectos",
     navExperience: "Experiencia",
     navContact: "Contacto",
-    role: "Junior IT & Web Developer",
-    lead: "Tecnico Superior en Desarrollo de Aplicaciones Web. Construyo proyectos con TypeScript, React, FastAPI, Python y R Shiny, con base real en sistemas, soporte IT y bioinformatica.",
+    role: "IT & Web Developer",
+    lead: "Técnico Superior en Desarrollo de Aplicaciones Web. Construyo proyectos con TypeScript, React, FastAPI, Python y R Shiny, con base real en sistemas, soporte IT y bioinformática.",
     viewCv: "Ver CV",
     cvCta: "Descargar CV",
     copyEmail: "Copiar email",
-    summary1: "Me interesa construir software que sirva para algo: interfaces claras, APIs que funcionan, automatizaciones utiles y visualizaciones de datos que reducen trabajo manual.",
-    summary2: "DAW terminado, SMR como base de sistemas, experiencia en IT Support y trabajo con R/Shiny en un entorno de investigacion biomedica.",
-    statRepos: "repos publicos",
+    summary1: "Me interesa construir software que sirva para algo: interfaces claras, APIs que funcionan, automatizaciones útiles y visualizaciones de datos que reducen trabajo manual.",
+    summary2: "DAW terminado, SMR como base de sistemas, experiencia en IT Support y trabajo con R/Shiny en un entorno de investigación biomédica.",
+    statRepos: "repos públicos",
     statDaw: "terminado",
     statPython: "nota en Python",
     experienceTitle: "Experiencia",
-    bioTag: "Bioinformatica",
-    bioPoint1: "Visualizacion de datos bioinformaticos con R y Shiny.",
-    bioPoint2: "Trabajo en entorno Linux dentro de investigacion biomedica.",
-    bioPoint3: "Conversion de datos tecnicos en interfaces explorables.",
-    itPoint1: "Soporte tecnico de hardware y software en entorno farmaceutico.",
-    itPoint2: "Mantenimiento de equipos y sistemas informaticos.",
-    itPoint3: "Gestion basica de incidencias y soporte a usuarios.",
+    bioTag: "Bioinformática",
+    bioPoint1: "Visualización de datos bioinformáticos con R y Shiny.",
+    bioPoint2: "Trabajo en entorno Linux dentro de investigación biomédica.",
+    bioPoint3: "Conversión de datos técnicos en interfaces explorables.",
+    itPoint1: "Soporte técnico de hardware y software en entorno farmacéutico.",
+    itPoint2: "Mantenimiento de equipos y sistemas informáticos.",
+    itPoint3: "Gestión básica de incidencias y soporte a usuarios.",
     projectsTitle: "Proyectos",
-    code: "Codigo",
-    repoPermisos: "Trabajo final de DAW-DAM: producto web mas serio, con TypeScript y estructura pensada para un caso real.",
+    code: "Código",
+    repoPermisos: "Trabajo final de DAW-DAM: producto web más serio, con TypeScript y estructura pensada para un caso real.",
     repoOnePiece: "CRUD completo con React, Vite, Router, Context API y json-server. Proyecto formativo con 9.5/10.",
-    repoFlota: "Juego completo con backend FastAPI, frontend HTML/CSS/JS, dificultad, puntuacion, temporizador y estadisticas.",
-    repoQR: "Herramienta practica: genera un A4 con QR personalizado, logo, marco, tipografia y enlace directo a resenas.",
-    repoHeatmap: "App bioinformatica para explorar expresion genica con mapas de calor y clustering jerarquico.",
-    educationTitle: "Educacion",
+    repoFlota: "Juego completo con backend FastAPI, frontend HTML/CSS/JS, dificultad, puntuación, temporizador y estadísticas.",
+    repoQR: "Herramienta práctica: genera un A4 con QR personalizado, logo, marco, tipografía y enlace directo a reseñas.",
+    repoHeatmap: "App bioinformática para explorar expresión génica con mapas de calor y clustering jerárquico.",
+    educationTitle: "Educación",
     dawText: "Frontend, backend, bases de datos, despliegue y proyectos web completos.",
-    smrText: "Base tecnica en sistemas, redes, mantenimiento y soporte informatico.",
+    smrText: "Base técnica en sistemas, redes, mantenimiento y soporte informático.",
     contactTitle: "Contacto",
     contactText: "Si quieres hablar conmigo, copia mi email sin que quede visible en pantalla.",
-    searchHelp: "Filtra proyectos por tecnologia o nombre.",
+    recommendationText: "También tengo cartas de recomendación y certificados disponibles para revisar.",
+    recommendation1: "Carta recomendación 1",
+    recommendation2: "Carta recomendación 2",
+    certificate: "Certificado",
+    searchHelp: "Filtra proyectos por tecnología o nombre.",
     copied: "Email copiado"
   },
   en: {
     navProjects: "Projects",
     navExperience: "Experience",
     navContact: "Contact",
-    role: "Junior IT & Web Developer",
+    role: "IT & Web Developer",
     lead: "Higher Technician in Web Application Development. I build projects with TypeScript, React, FastAPI, Python, and R Shiny, backed by systems, IT support, and bioinformatics experience.",
     viewCv: "View CV",
     cvCta: "Download CV",
@@ -72,12 +76,38 @@ const copy = {
     smrText: "Technical base in systems, networks, maintenance, and IT support.",
     contactTitle: "Contact",
     contactText: "If you want to talk, copy my email without leaving it visible on screen.",
+    recommendationText: "I also have recommendation letters and certificates available for review.",
+    recommendation1: "Recommendation letter 1",
+    recommendation2: "Recommendation letter 2",
+    certificate: "Certificate",
     searchHelp: "Filter projects by technology or name.",
     copied: "Email copied"
   }
 };
 
 const getLang = () => document.documentElement.lang === "en" ? "en" : "es";
+
+const icons = {
+  search: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>',
+  moon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5Z"></path></svg>',
+  sun: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32 1.41-1.41"></path></svg>',
+  monitor: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1.5"></rect><path d="M8 20h8m-4-4v4"></path></svg>',
+  phone: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="3" width="8" height="18" rx="2"></rect><path d="M11 18h2"></path></svg>'
+};
+
+const setThemeButton = (dark) => {
+  const button = document.querySelector("[data-theme-toggle]");
+  button.innerHTML = dark ? icons.sun : icons.moon;
+  button.setAttribute("aria-label", dark ? "Tema claro" : "Tema oscuro");
+  button.title = dark ? "Tema claro" : "Tema oscuro";
+};
+
+const setDeviceButton = (mobile) => {
+  const button = document.querySelector("[data-device-toggle]");
+  button.innerHTML = mobile ? icons.monitor : icons.phone;
+  button.setAttribute("aria-label", mobile ? "Vista escritorio" : "Vista movil");
+  button.title = mobile ? "Vista escritorio" : "Vista movil";
+};
 
 const setLang = (lang) => {
   document.documentElement.lang = lang;
@@ -103,7 +133,14 @@ document.querySelector("[data-theme-toggle]").addEventListener("click", () => {
   const root = document.documentElement;
   const dark = root.dataset.theme !== "dark";
   root.dataset.theme = dark ? "dark" : "light";
-  document.querySelector("[data-theme-toggle]").textContent = dark ? "Light Theme" : "Dark Theme";
+  setThemeButton(dark);
+});
+
+document.querySelector("[data-device-toggle]").addEventListener("click", () => {
+  const root = document.documentElement;
+  const mobile = root.dataset.device !== "mobile";
+  root.dataset.device = mobile ? "mobile" : "desktop";
+  setDeviceButton(mobile);
 });
 
 document.querySelectorAll("[data-copy-email]").forEach((button) => {
@@ -129,3 +166,7 @@ document.querySelector("[data-search-input]").addEventListener("input", (event) 
 document.querySelectorAll("[data-i18n]").forEach((node) => {
   console.assert(copy.es[node.dataset.i18n] && copy.en[node.dataset.i18n], `Missing i18n: ${node.dataset.i18n}`);
 });
+
+document.querySelector("[data-search-toggle]").innerHTML = icons.search;
+setThemeButton(document.documentElement.dataset.theme === "dark");
+setDeviceButton(document.documentElement.dataset.device === "mobile");
