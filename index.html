@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio de Oriol Chiva, Junior IT & Web Developer con proyectos en React, TypeScript, FastAPI, Python y R Shiny.">
+    <title>Oriol Chiva | Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio">Oriol Chiva</a>
+      <nav aria-label="Principal">
+        <a href="#proyectos" data-i18n="navProjects">Proyectos</a>
+        <a href="#experiencia" data-i18n="navExperience">Experiencia</a>
+        <a href="#skills">Skills</a>
+        <button class="icon-button" type="button" data-search-toggle aria-label="Buscar">Search</button>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Cambiar tema">Dark Theme</button>
+        <button class="icon-button" type="button" data-lang-toggle>EN</button>
+      </nav>
+    </header>
+
+    <main id="inicio" class="page-shell">
+      <section class="profile">
+        <div class="profile-mark" aria-hidden="true">OC</div>
+        <div>
+          <p class="eyebrow" data-i18n="role">Junior IT & Web Developer</p>
+          <h1>Oriol Chiva</h1>
+          <p class="lead" data-i18n="lead">
+            Tecnico Superior en Desarrollo de Aplicaciones Web. Construyo proyectos con TypeScript, React, FastAPI, Python y R Shiny, con base real en sistemas, soporte IT y bioinformatica.
+          </p>
+          <div class="quick-links" aria-label="Acciones principales">
+            <a href="https://github.com/Chivaa8" target="_blank" rel="noreferrer">Github</a>
+            <a href="assets/docs/CV-Oriol-Chiva.pdf" target="_blank" rel="noreferrer" data-i18n="viewCv">Ver CV</a>
+            <a href="assets/docs/CV-Oriol-Chiva.pdf" download data-i18n="cvCta">Descargar CV</a>
+            <button type="button" data-copy-email data-i18n="copyEmail">Copiar email</button>
+            <span>Badalona, Barcelona</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="summary">
+        <p data-i18n="summary1">
+          Me interesa construir software que sirva para algo: interfaces claras, APIs que funcionan, automatizaciones utiles y visualizaciones de datos que reducen trabajo manual.
+        </p>
+        <p data-i18n="summary2">
+          DAW terminado, SMR como base de sistemas, experiencia en IT Support y trabajo con R/Shiny en un entorno de investigacion biomedica.
+        </p>
+      </section>
+
+      <section class="metrics" aria-label="Datos rapidos">
+        <article><strong>18</strong><span data-i18n="statRepos">repos publicos</span></article>
+        <article><strong>DAW</strong><span data-i18n="statDaw">terminado</span></article>
+        <article><strong>9.94</strong><span data-i18n="statPython">nota en Python</span></article>
+      </section>
+
+      <section class="section" id="experiencia">
+        <h2 data-i18n="experienceTitle">Experiencia</h2>
+        <article class="resume-item">
+          <a class="work-photo" href="https://www.hospitalgermanstrias.cat/" target="_blank" rel="noreferrer" aria-label="Web oficial Hospital Germans Trias i Pujol">
+            <img src="assets/img/can-ruti.jpg" alt="Hospital Germans Trias i Pujol, Can Ruti" loading="lazy">
+            <span>Can Ruti</span>
+          </a>
+          <div>
+            <h3>Institut Germans Trias i Pujol</h3>
+            <p class="item-meta" data-i18n="bioTag">Bioinformatica</p>
+            <ul>
+              <li data-i18n="bioPoint1">Visualizacion de datos bioinformaticos con R y Shiny.</li>
+              <li data-i18n="bioPoint2">Trabajo en entorno Linux dentro de investigacion biomedica.</li>
+              <li data-i18n="bioPoint3">Conversion de datos tecnicos en interfaces explorables.</li>
+            </ul>
+            <p class="tags">R Shiny Python Linux Bioinformatica Datos</p>
+          </div>
+        </article>
+        <article class="resume-item">
+          <a class="work-photo" href="https://kymos.com/" target="_blank" rel="noreferrer" aria-label="Web oficial Kymos">
+            <img src="assets/img/kymos.jpg" alt="Kymos Group" loading="lazy">
+            <span>Kymos</span>
+          </a>
+          <div>
+            <h3>Kymos</h3>
+            <p class="item-meta">IT Support</p>
+            <ul>
+              <li data-i18n="itPoint1">Soporte tecnico de hardware y software en entorno farmaceutico.</li>
+              <li data-i18n="itPoint2">Mantenimiento de equipos y sistemas informaticos.</li>
+              <li data-i18n="itPoint3">Gestion basica de incidencias y soporte a usuarios.</li>
+            </ul>
+            <p class="tags">Windows Linux Hardware Software Usuarios</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="proyectos">
+        <h2 data-i18n="projectsTitle">Proyectos</h2>
+        <div class="project-list">
+          <article class="project-card" data-search="typescript daw dam permisos laborales producto frontend">
+            <div class="project-thumb">TS</div>
+            <div>
+              <div class="project-actions">
+                <a href="https://github.com/Chivaa8/gestor-permisos-laborales" target="_blank" rel="noreferrer" data-i18n="code">Codigo</a>
+              </div>
+              <h3>Gestor permisos laborales</h3>
+              <p class="tags">TypeScript Frontend DAW-DAM Producto</p>
+              <p data-i18n="repoPermisos">Trabajo final de DAW-DAM: producto web mas serio, con TypeScript y estructura pensada para un caso real.</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-search="react vite crud router context json-server one piece">
+            <div class="project-thumb">R</div>
+            <div>
+              <div class="project-actions">
+                <a href="https://github.com/Chivaa8/One-Piece" target="_blank" rel="noreferrer" data-i18n="code">Codigo</a>
+              </div>
+              <h3>One Piece</h3>
+              <p class="tags">React Vite Router Context API CRUD 9.5/10</p>
+              <p data-i18n="repoOnePiece">CRUD completo con React, Vite, Router, Context API y json-server. Proyecto formativo con 9.5/10.</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-search="fastapi juego hundir flota backend frontend javascript">
+            <div class="project-thumb">API</div>
+            <div>
+              <div class="project-actions">
+                <a href="https://github.com/Chivaa8/Hundir-Flota" target="_blank" rel="noreferrer" data-i18n="code">Codigo</a>
+              </div>
+              <h3>Hundir la Flota</h3>
+              <p class="tags">FastAPI HTML CSS JavaScript Game</p>
+              <p data-i18n="repoFlota">Juego completo con backend FastAPI, frontend HTML/CSS/JS, dificultad, puntuacion, temporizador y estadisticas.</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-search="python qr automatizacion pdf google maps resenas">
+            <div class="project-thumb">PY</div>
+            <div>
+              <div class="project-actions">
+                <a href="https://github.com/Chivaa8/Generaci-n_QR" target="_blank" rel="noreferrer" data-i18n="code">Codigo</a>
+              </div>
+              <h3>Generacion QR</h3>
+              <p class="tags">Python Automatizacion PDF QR</p>
+              <p data-i18n="repoQR">Herramienta practica: genera un A4 con QR personalizado, logo, marco, tipografia y enlace directo a resenas.</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-search="r shiny bioinformatica heatmap clustering expresion genica">
+            <div class="project-thumb">R</div>
+            <div>
+              <div class="project-actions">
+                <a href="https://github.com/Chivaa8/primera_app_r_cluster_heatmap" target="_blank" rel="noreferrer" data-i18n="code">Codigo</a>
+              </div>
+              <h3>Cluster Heatmap App</h3>
+              <p class="tags">R Shiny Bioinformatica Datos</p>
+              <p data-i18n="repoHeatmap">App bioinformatica para explorar expresion genica con mapas de calor y clustering jerarquico.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section education">
+        <h2 data-i18n="educationTitle">Educacion</h2>
+        <article class="resume-item">
+          <div class="logo-tile">DAW</div>
+          <div>
+            <h3>GS Desarrollo de Aplicaciones Web</h3>
+            <p class="item-meta">INS La Ferreria - Montcada</p>
+            <p data-i18n="dawText">Frontend, backend, bases de datos, despliegue y proyectos web completos.</p>
+          </div>
+        </article>
+        <article class="resume-item">
+          <div class="logo-tile">SMR</div>
+          <div>
+            <h3>GM Sistemas Microinformaticos y Redes</h3>
+            <p class="item-meta">IFP Innovacion en Formacion Profesional - Barcelona</p>
+            <p data-i18n="smrText">Base tecnica en sistemas, redes, mantenimiento y soporte informatico.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="skills">
+        <h2>Skills</h2>
+        <div class="skill-cloud" aria-label="Tecnologias">
+          <span>JavaScript</span><span>TypeScript</span><span>React</span><span>Angular</span>
+          <span>FastAPI</span><span>Python</span><span>R</span><span>Shiny</span>
+          <span>SQL</span><span>Docker</span><span>Linux</span><span>Git</span>
+          <span>GitHub</span><span>HTML</span><span>CSS</span>
+        </div>
+      </section>
+
+      <section class="section contact" id="contacto">
+        <h2 data-i18n="contactTitle">Contacto</h2>
+        <p data-i18n="contactText">Si quieres hablar conmigo, copia mi email sin que quede visible en pantalla.</p>
+        <div class="quick-links">
+          <button type="button" data-copy-email data-i18n="copyEmail">Copiar email</button>
+          <a href="https://github.com/Chivaa8" target="_blank" rel="noreferrer">Github</a>
+          <a href="assets/docs/CV-Oriol-Chiva.pdf" target="_blank" rel="noreferrer" data-i18n="viewCv">Ver CV</a>
+          <a href="assets/docs/CV-Oriol-Chiva.pdf" download data-i18n="cvCta">Descargar CV</a>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="search-dialog" data-search-dialog>
+      <form method="dialog">
+        <button class="dialog-close" aria-label="Cerrar">Close</button>
+      </form>
+      <label>
+        <span>Search</span>
+        <input type="search" data-search-input placeholder="React, FastAPI, Python...">
+      </label>
+      <p class="search-help" data-i18n="searchHelp">Filtra proyectos por tecnologia o nombre.</p>
+    </dialog>
+
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
+    <a class="to-top" href="#inicio" aria-label="Subir arriba">&uarr;</a>
+  </body>
+</html>
