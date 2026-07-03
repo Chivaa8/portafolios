@@ -9,7 +9,7 @@ const copy = {
     lead: "Técnico Superior en Desarrollo de Aplicaciones Web. Construyo proyectos con TypeScript, React, FastAPI, Python y R Shiny, con base real en sistemas, soporte IT y bioinformática.",
     viewCv: "Ver CV",
     cvCta: "Descargar CV",
-    copyEmail: "Copiar email",
+    copyEmail: "Email",
     summary1: "Me interesa construir software que sirva para algo: interfaces claras, APIs que funcionan, automatizaciones útiles y visualizaciones de datos que reducen trabajo manual.",
     summary2: "DAW terminado, SMR como base de sistemas, experiencia en IT Support y trabajo con R/Shiny en un entorno de investigación biomédica.",
     statRepos: "repos públicos",
@@ -36,9 +36,11 @@ const copy = {
     contactTitle: "Contacto",
     contactText: "Si quieres hablar conmigo, copia mi email sin que quede visible en pantalla.",
     recommendationText: "También tengo cartas de recomendación y certificados disponibles para revisar.",
-    recommendation1: "Carta recomendación 1",
-    recommendation2: "Carta recomendación 2",
-    certificate: "Certificado",
+    recommendation1: "Recomendación IGTP 1",
+    recommendation2: "Recomendación IGTP 2",
+    certificate: "Recomendación Kymos",
+    educationDurationLabel: "Duración",
+    educationModeLabel: "Enfoque",
     searchHelp: "Filtra proyectos por tecnología o nombre.",
     copied: "Email copiado"
   },
@@ -50,7 +52,7 @@ const copy = {
     lead: "Higher Technician in Web Application Development. I build projects with TypeScript, React, FastAPI, Python, and R Shiny, backed by systems, IT support, and bioinformatics experience.",
     viewCv: "View CV",
     cvCta: "Download CV",
-    copyEmail: "Copy email",
+    copyEmail: "Email",
     summary1: "I care about building useful software: clear interfaces, working APIs, useful automations, and data visualizations that reduce manual work.",
     summary2: "DAW completed, SMR systems background, IT Support experience, and R/Shiny work in a biomedical research environment.",
     statRepos: "public repos",
@@ -77,15 +79,60 @@ const copy = {
     contactTitle: "Contact",
     contactText: "If you want to talk, copy my email without leaving it visible on screen.",
     recommendationText: "I also have recommendation letters and certificates available for review.",
-    recommendation1: "Recommendation letter 1",
-    recommendation2: "Recommendation letter 2",
-    certificate: "Certificate",
+    recommendation1: "IGTP recommendation 1",
+    recommendation2: "IGTP recommendation 2",
+    certificate: "Kymos recommendation",
+    educationDurationLabel: "Duration",
+    educationModeLabel: "Focus",
     searchHelp: "Filter projects by technology or name.",
     copied: "Email copied"
   }
 };
 
 const getLang = () => document.documentElement.lang === "en" ? "en" : "es";
+
+const educationDetails = {
+  es: {
+    daw: {
+      period: "2024 - 2026",
+      title: "GS Desarrollo de Aplicaciones Web",
+      center: "INS La Ferreria - Montcada",
+      description: "Ciclo donde cierro la parte web completa: interfaces, backend, bases de datos, despliegue y proyectos con estructura real.",
+      duration: "2 años",
+      mode: "Producto web",
+      tags: "TypeScript React APIs SQL Git"
+    },
+    smr: {
+      period: "2022 - 2024",
+      title: "GM Sistemas Microinformáticos y Redes",
+      center: "IFP Innovación en Formación Profesional - Barcelona",
+      description: "Base técnica de sistemas: redes, hardware, software, soporte a usuarios y mantenimiento de equipos.",
+      duration: "2 años",
+      mode: "Sistemas e IT",
+      tags: "Linux Windows Redes Hardware Soporte"
+    }
+  },
+  en: {
+    daw: {
+      period: "2024 - 2026",
+      title: "Higher Degree in Web Application Development",
+      center: "INS La Ferreria - Montcada",
+      description: "The cycle where I completed the full web path: interfaces, backend, databases, deployment, and projects with real structure.",
+      duration: "2 years",
+      mode: "Web product",
+      tags: "TypeScript React APIs SQL Git"
+    },
+    smr: {
+      period: "2022 - 2024",
+      title: "Intermediate Degree in Microcomputer Systems and Networks",
+      center: "IFP Innovación en Formación Profesional - Barcelona",
+      description: "Technical systems base: networks, hardware, software, user support, and equipment maintenance.",
+      duration: "2 years",
+      mode: "Systems and IT",
+      tags: "Linux Windows Networks Hardware Support"
+    }
+  }
+};
 
 const icons = {
   search: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>',
@@ -150,6 +197,28 @@ document.querySelectorAll("[data-copy-email]").forEach((button) => {
   });
 });
 
+const openEducationDialog = (key) => {
+  const data = educationDetails[getLang()][key];
+  const dialog = document.querySelector("[data-education-dialog]");
+  dialog.querySelector("[data-education-period]").textContent = data.period;
+  dialog.querySelector("[data-education-title]").textContent = data.title;
+  dialog.querySelector("[data-education-center]").textContent = data.center;
+  dialog.querySelector("[data-education-description]").textContent = data.description;
+  dialog.querySelector("[data-education-duration]").textContent = data.duration;
+  dialog.querySelector("[data-education-mode]").textContent = data.mode;
+  dialog.querySelector("[data-education-tags]").textContent = data.tags;
+  dialog.showModal();
+};
+
+document.querySelectorAll("[data-education-open]").forEach((card) => {
+  card.addEventListener("click", () => openEducationDialog(card.dataset.educationOpen));
+  card.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    openEducationDialog(card.dataset.educationOpen);
+  });
+});
+
 document.querySelector("[data-search-toggle]").addEventListener("click", () => {
   const dialog = document.querySelector("[data-search-dialog]");
   dialog.showModal();
@@ -162,6 +231,28 @@ document.querySelector("[data-search-input]").addEventListener("input", (event) 
     card.classList.toggle("is-hidden", query && !card.dataset.search.includes(query));
   });
 });
+
+const animateMetric = (node) => {
+  const target = Number(node.dataset.count);
+  const decimals = node.dataset.count.includes(".") ? 2 : 0;
+  const start = performance.now();
+  const tick = (now) => {
+    const progress = Math.min((now - start) / 900, 1);
+    node.textContent = (target * progress).toFixed(decimals);
+    if (progress < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+};
+
+const metricsObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    animateMetric(entry.target);
+    observer.unobserve(entry.target);
+  });
+});
+
+document.querySelectorAll("[data-count]").forEach((node) => metricsObserver.observe(node));
 
 document.querySelectorAll("[data-i18n]").forEach((node) => {
   console.assert(copy.es[node.dataset.i18n] && copy.en[node.dataset.i18n], `Missing i18n: ${node.dataset.i18n}`);

@@ -78,6 +78,7 @@ button {
 }
 
 .brand {
+  font-size: 1.25rem;
   font-weight: 800;
 }
 
@@ -399,6 +400,65 @@ h3 {
   gap: 10px;
 }
 
+.education-track {
+  display: grid;
+  gap: 18px;
+  margin-top: 18px;
+  position: relative;
+}
+
+.education-track::before {
+  background: var(--line);
+  bottom: 18px;
+  content: "";
+  left: 42px;
+  position: absolute;
+  top: 18px;
+  width: 1px;
+}
+
+.education-card {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--paper) 92%, transparent), color-mix(in srgb, var(--soft) 78%, transparent));
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 84px minmax(0, 1fr) auto;
+  padding: 22px;
+  position: relative;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.education-card:hover,
+.education-card:focus-visible {
+  border-color: var(--accent-2);
+  outline: 0;
+  transform: translateY(-2px);
+}
+
+.education-number {
+  align-items: center;
+  background: var(--bg);
+  border: 1px solid var(--accent-2);
+  border-radius: 999px;
+  color: var(--accent-2);
+  display: flex;
+  font-weight: 900;
+  height: 42px;
+  justify-content: center;
+  position: relative;
+  width: 42px;
+  z-index: 1;
+}
+
+.education-card > strong {
+  align-self: start;
+  color: var(--accent);
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1;
+}
+
 .skill-cloud span {
   background: var(--paper);
   border: 1px solid var(--line);
@@ -407,11 +467,18 @@ h3 {
   padding: 9px 12px;
 }
 
+.quick-links svg {
+  fill: currentColor;
+  height: 20px;
+  width: 20px;
+}
+
 .contact {
   padding-bottom: 28px;
 }
 
-.search-dialog {
+.search-dialog,
+.education-dialog {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -421,7 +488,8 @@ h3 {
   width: calc(100% - 32px);
 }
 
-.search-dialog::backdrop {
+.search-dialog::backdrop,
+.education-dialog::backdrop {
   background: rgb(0 0 0 / 45%);
 }
 
@@ -448,6 +516,33 @@ h3 {
 .search-help {
   color: var(--muted);
   margin-bottom: 0;
+}
+
+.education-dialog h2 {
+  margin: 10px 0;
+}
+
+.education-detail-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 22px 0;
+}
+
+.education-detail-grid span {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.education-detail-grid strong,
+.education-detail-grid small {
+  display: block;
+}
+
+.education-detail-grid small {
+  color: var(--muted);
 }
 
 .toast {
@@ -523,8 +618,13 @@ h3 {
   .resume-item,
   .project-card,
   .metrics,
-  .hero-splash {
+  .hero-splash,
+  .education-card {
     grid-template-columns: 1fr;
+  }
+
+  .education-track::before {
+    display: none;
   }
 
   .profile {

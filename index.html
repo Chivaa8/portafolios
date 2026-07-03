@@ -43,7 +43,7 @@
             </a>
             <button type="button" data-copy-email>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3V5Zm2 2v.4l7 4.4 7-4.4V7H5Zm14 2.7-7 4.4-7-4.4V17h14V9.7Z"/></svg>
-              <span data-i18n="copyEmail">Copiar email</span>
+              <span data-i18n="copyEmail">Email</span>
             </button>
             <span>Badalona, Barcelona</span>
           </div>
@@ -60,9 +60,9 @@
       </section>
 
       <section class="metrics" aria-label="Datos rápidos">
-        <article><strong>18</strong><span data-i18n="statRepos">repos públicos</span></article>
+        <article><strong data-count="18">0</strong><span data-i18n="statRepos">repos públicos</span></article>
         <article><strong>DAW</strong><span data-i18n="statDaw">terminado</span></article>
-        <article><strong>9.94</strong><span data-i18n="statPython">nota en Python</span></article>
+        <article><strong data-count="9.94">0</strong><span data-i18n="statPython">nota en Python</span></article>
       </section>
 
       <section class="section" id="experiencia">
@@ -168,22 +168,28 @@
 
       <section class="section education">
         <h2 data-i18n="educationTitle">Educación</h2>
-        <article class="resume-item">
-          <div class="logo-tile">DAW</div>
-          <div>
-            <h3>GS Desarrollo de Aplicaciones Web</h3>
-            <p class="item-meta">INS La Ferreria - Montcada</p>
-            <p data-i18n="dawText">Frontend, backend, bases de datos, despliegue y proyectos web completos.</p>
-          </div>
-        </article>
-        <article class="resume-item">
-          <div class="logo-tile">SMR</div>
-          <div>
-            <h3>GM Sistemas Microinformáticos y Redes</h3>
-            <p class="item-meta">IFP Innovacion en Formacion Profesional - Barcelona</p>
-            <p data-i18n="smrText">Base técnica en sistemas, redes, mantenimiento y soporte informático.</p>
-          </div>
-        </article>
+        <div class="education-track">
+          <article class="education-card" role="button" tabindex="0" data-education-open="daw" aria-label="Ver detalles de DAW">
+            <span class="education-number">01</span>
+            <div>
+              <p class="item-meta">INS La Ferreria - Montcada</p>
+              <h3>GS Desarrollo de Aplicaciones Web</h3>
+              <p data-i18n="dawText">Frontend, backend, bases de datos, despliegue y proyectos web completos.</p>
+              <p class="tags">TypeScript React APIs SQL Git</p>
+            </div>
+            <strong>DAW</strong>
+          </article>
+          <article class="education-card" role="button" tabindex="0" data-education-open="smr" aria-label="Ver detalles de SMR">
+            <span class="education-number">02</span>
+            <div>
+              <p class="item-meta">IFP Innovación en Formación Profesional - Barcelona</p>
+              <h3>GM Sistemas Microinformáticos y Redes</h3>
+              <p data-i18n="smrText">Base técnica en sistemas, redes, mantenimiento y soporte informático.</p>
+              <p class="tags">Linux Windows Redes Hardware Soporte</p>
+            </div>
+            <strong>SMR</strong>
+          </article>
+        </div>
       </section>
 
       <section class="section" id="skills">
@@ -201,13 +207,34 @@
         <p data-i18n="contactText">Si quieres hablar conmigo, copia mi email sin que quede visible en pantalla.</p>
         <p data-i18n="recommendationText">También tengo cartas de recomendación y certificados disponibles para revisar.</p>
         <div class="quick-links">
-          <button type="button" data-copy-email data-i18n="copyEmail">Copiar email</button>
-          <a href="https://github.com/Chivaa8" target="_blank" rel="noreferrer">Github</a>
-          <a href="assets/docs/CV-Oriol-Chiva.pdf" target="_blank" rel="noreferrer" data-i18n="viewCv">Ver CV</a>
-          <a href="assets/docs/CV-Oriol-Chiva.pdf" download data-i18n="cvCta">Descargar CV</a>
-          <a href="assets/docs/carta-recomendacion-oriol.pdf" target="_blank" rel="noreferrer" data-i18n="recommendation1">Carta recomendación 1</a>
-          <a href="assets/docs/carta-recomendacion.pdf" target="_blank" rel="noreferrer" data-i18n="recommendation2">Carta recomendación 2</a>
-          <a href="assets/docs/certificado-lsumoy.pdf" target="_blank" rel="noreferrer" data-i18n="certificate">Certificado</a>
+          <button type="button" data-copy-email>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3V5Zm2 2v.4l7 4.4 7-4.4V7H5Zm14 2.7-7 4.4-7-4.4V17h14V9.7Z"/></svg>
+            <span data-i18n="copyEmail">Email</span>
+          </button>
+          <a href="https://github.com/Chivaa8" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.5 21.8c.6.1.8-.2.8-.5v-2c-3.4.8-4.1-1.4-4.1-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.7 4.7 0 0 1 1.2-3.2c-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.2 11.2 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .5.4.9 1.2.9 2.4v2.8c0 .3.2.6.8.5A11.2 11.2 0 0 0 12 .8Z"/></svg>
+            Github
+          </a>
+          <a href="assets/docs/CV-Oriol-Chiva.pdf" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6V2Zm8 1.8V8h4.2L14 3.8ZM8 4v16h10V10h-6V4H8Zm2 8h6v2h-6v-2Zm0 4h6v2h-6v-2Z"/></svg>
+            <span data-i18n="viewCv">Ver CV</span>
+          </a>
+          <a href="assets/docs/CV-Oriol-Chiva.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v10l3.5-3.5 1.4 1.4-5.9 5.9-5.9-5.9 1.4-1.4L11 13V3Zm-6 16h14v2H5v-2Z"/></svg>
+            <span data-i18n="cvCta">Descargar CV</span>
+          </a>
+          <a href="assets/docs/carta-recomendacion-oriol.pdf" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6V2Zm8 1.8V8h4.2L14 3.8ZM8 4v16h10V10h-6V4H8Zm2 8h6v2h-6v-2Zm0 4h6v2h-6v-2Z"/></svg>
+            <span data-i18n="recommendation1">Recomendación IGTP 1</span>
+          </a>
+          <a href="assets/docs/certificado-lsumoy.pdf" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6V2Zm8 1.8V8h4.2L14 3.8ZM8 4v16h10V10h-6V4H8Zm2 8h6v2h-6v-2Zm0 4h6v2h-6v-2Z"/></svg>
+            <span data-i18n="recommendation2">Recomendación IGTP 2</span>
+          </a>
+          <a href="assets/docs/carta-recomendacion.pdf" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6V2Zm8 1.8V8h4.2L14 3.8ZM8 4v16h10V10h-6V4H8Zm2 8h6v2h-6v-2Zm0 4h6v2h-6v-2Z"/></svg>
+            <span data-i18n="certificate">Recomendación Kymos</span>
+          </a>
         </div>
       </section>
     </main>
@@ -236,6 +263,21 @@
         <input type="search" data-search-input placeholder="React, FastAPI, Python...">
       </label>
       <p class="search-help" data-i18n="searchHelp">Filtra proyectos por tecnología o nombre.</p>
+    </dialog>
+
+    <dialog class="education-dialog" data-education-dialog>
+      <form method="dialog">
+        <button class="dialog-close" aria-label="Cerrar">Cerrar</button>
+      </form>
+      <p class="eyebrow" data-education-period></p>
+      <h2 data-education-title></h2>
+      <p class="item-meta" data-education-center></p>
+      <p data-education-description></p>
+      <div class="education-detail-grid">
+        <span><strong data-education-duration></strong><small data-i18n="educationDurationLabel">Duración</small></span>
+        <span><strong data-education-mode></strong><small data-i18n="educationModeLabel">Enfoque</small></span>
+      </div>
+      <p class="tags" data-education-tags></p>
     </dialog>
 
     <div class="toast" data-toast role="status" aria-live="polite"></div>
