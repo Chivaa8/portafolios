@@ -6,6 +6,7 @@
     <meta name="description" content="Portfolio de Oriol Chiva, IT & Web Developer con proyectos en React, TypeScript, FastAPI, Python y R Shiny.">
     <title>Oriol Chiva | Portfolio</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/data.js" defer></script>
     <script src="assets/js/main.js" defer></script>
   </head>
   <body>
@@ -105,7 +106,7 @@
         <h2 data-i18n="projectsTitle">Proyectos</h2>
         <div class="project-list">
           <article class="project-card" data-search="typescript daw dam permisos laborales producto frontend">
-            <div class="project-thumb">TS</div>
+            <div class="project-thumb"><img src="assets/img/project-permisos.jpg" alt="Vista del gestor de permisos laborales" loading="lazy"></div>
             <div>
               <div class="project-actions">
                 <a href="https://github.com/Chivaa8/gestor-permisos-laborales" target="_blank" rel="noreferrer" data-i18n="code">Código</a>
@@ -117,7 +118,7 @@
           </article>
 
           <article class="project-card" data-search="react vite crud router context json-server one piece">
-            <div class="project-thumb">R</div>
+            <div class="project-thumb"><img src="assets/img/project-onepiece.jpg" alt="Vista del proyecto One Piece" loading="lazy"></div>
             <div>
               <div class="project-actions">
                 <a href="https://github.com/Chivaa8/One-Piece" target="_blank" rel="noreferrer" data-i18n="code">Código</a>
@@ -129,7 +130,7 @@
           </article>
 
           <article class="project-card" data-search="fastapi juego hundir flota backend frontend javascript">
-            <div class="project-thumb">API</div>
+            <div class="project-thumb"><img src="assets/img/project-flota.jpg" alt="Vista del juego Hundir la Flota" loading="lazy"></div>
             <div>
               <div class="project-actions">
                 <a href="https://github.com/Chivaa8/Hundir-Flota" target="_blank" rel="noreferrer" data-i18n="code">Código</a>
@@ -140,20 +141,20 @@
             </div>
           </article>
 
-          <article class="project-card" data-search="python qr automatizacion pdf google maps resenas">
-            <div class="project-thumb">PY</div>
+          <article class="project-card" data-search="javascript expo movil videojuegos catalogo">
+            <div class="project-thumb"><img src="assets/img/project-videojuegos.jpg" alt="Vista del catálogo de videojuegos" loading="lazy"></div>
             <div>
               <div class="project-actions">
-                <a href="https://github.com/Chivaa8/Generaci-n_QR" target="_blank" rel="noreferrer" data-i18n="code">Código</a>
+                <a href="https://github.com/Chivaa8/Catalogo-Videojuegos" target="_blank" rel="noreferrer" data-i18n="code">Código</a>
               </div>
-              <h3>Generación QR</h3>
-              <p class="tags">Python Automatización PDF QR</p>
-              <p data-i18n="repoQR">Herramienta práctica: genera un A4 con QR personalizado, logo, marco, tipografía y enlace directo a reseñas.</p>
+              <h3>Catálogo Videojuegos</h3>
+              <p class="tags">JavaScript Expo Mobile Catálogo</p>
+              <p data-i18n="repoCatalogo">App móvil para organizar un catálogo de videojuegos con una interfaz clara y pensada para consultar rápido.</p>
             </div>
           </article>
 
           <article class="project-card" data-search="r shiny bioinformatica heatmap clustering expresion genica">
-            <div class="project-thumb">R</div>
+            <div class="project-thumb"><img src="assets/img/project-heatmap.jpg" alt="Vista del proyecto Cluster Heatmap" loading="lazy"></div>
             <div>
               <div class="project-actions">
                 <a href="https://github.com/Chivaa8/primera_app_r_cluster_heatmap" target="_blank" rel="noreferrer" data-i18n="code">Código</a>
@@ -189,17 +190,22 @@
             </div>
             <strong>SMR</strong>
           </article>
+          <article class="education-card" role="button" tabindex="0" data-education-open="seas" aria-label="Ver detalles de cursos SEAS">
+            <span class="education-number">03</span>
+            <div>
+              <p class="item-meta">SEAS Estudios Superiores Abiertos</p>
+              <h3>Formación complementaria</h3>
+              <p data-i18n="seasText">Python, Big Data, virtualización y Machine Learning con cursos especializados de 150 horas.</p>
+              <p class="tags">Python Big Data Virtualización Machine Learning</p>
+            </div>
+            <strong>SEAS</strong>
+          </article>
         </div>
       </section>
 
       <section class="section" id="skills">
-        <h2>Skills</h2>
-        <div class="skill-cloud" aria-label="Tecnologías">
-          <span>JavaScript</span><span>TypeScript</span><span>React</span><span>Angular</span>
-          <span>FastAPI</span><span>Python</span><span>R</span><span>Shiny</span>
-          <span>SQL</span><span>Docker</span><span>Linux</span><span>Git</span>
-          <span>GitHub</span><span>HTML</span><span>CSS</span>
-        </div>
+        <h2 data-i18n="skillsTitle">Skills</h2>
+        <div class="skill-cloud" data-skills-list aria-label="Tecnologías"></div>
       </section>
 
       <section class="section contact" id="contacto">
@@ -277,6 +283,7 @@
         <span><strong data-education-duration></strong><small data-i18n="educationDurationLabel">Duración</small></span>
         <span><strong data-education-mode></strong><small data-i18n="educationModeLabel">Enfoque</small></span>
       </div>
+      <div class="course-list" data-education-courses></div>
       <p class="tags" data-education-tags></p>
     </dialog>
 

@@ -1,139 +1,6 @@
+﻿const { copy, educationDetails, skills } = window.portfolioData;
 const email = ["oriolchiva8", "gmail.com"].join("@");
-
-const copy = {
-  es: {
-    navProjects: "Proyectos",
-    navExperience: "Experiencia",
-    navContact: "Contacto",
-    role: "IT & Web Developer",
-    lead: "Técnico Superior en Desarrollo de Aplicaciones Web. Construyo proyectos con TypeScript, React, FastAPI, Python y R Shiny, con base real en sistemas, soporte IT y bioinformática.",
-    viewCv: "Ver CV",
-    cvCta: "Descargar CV",
-    copyEmail: "Email",
-    summary1: "Me interesa construir software que sirva para algo: interfaces claras, APIs que funcionan, automatizaciones útiles y visualizaciones de datos que reducen trabajo manual.",
-    summary2: "DAW terminado, SMR como base de sistemas, experiencia en IT Support y trabajo con R/Shiny en un entorno de investigación biomédica.",
-    statRepos: "repos públicos",
-    statDaw: "terminado",
-    statPython: "nota en Python",
-    experienceTitle: "Experiencia",
-    bioTag: "Bioinformática",
-    bioPoint1: "Visualización de datos bioinformáticos con R y Shiny.",
-    bioPoint2: "Trabajo en entorno Linux dentro de investigación biomédica.",
-    bioPoint3: "Conversión de datos técnicos en interfaces explorables.",
-    itPoint1: "Soporte técnico de hardware y software en entorno farmacéutico.",
-    itPoint2: "Mantenimiento de equipos y sistemas informáticos.",
-    itPoint3: "Gestión básica de incidencias y soporte a usuarios.",
-    projectsTitle: "Proyectos",
-    code: "Código",
-    repoPermisos: "Trabajo final de DAW-DAM: producto web más serio, con TypeScript y estructura pensada para un caso real.",
-    repoOnePiece: "CRUD completo con React, Vite, Router, Context API y json-server. Proyecto formativo con 9.5/10.",
-    repoFlota: "Juego completo con backend FastAPI, frontend HTML/CSS/JS, dificultad, puntuación, temporizador y estadísticas.",
-    repoQR: "Herramienta práctica: genera un A4 con QR personalizado, logo, marco, tipografía y enlace directo a reseñas.",
-    repoHeatmap: "App bioinformática para explorar expresión génica con mapas de calor y clustering jerárquico.",
-    educationTitle: "Educación",
-    dawText: "Frontend, backend, bases de datos, despliegue y proyectos web completos.",
-    smrText: "Base técnica en sistemas, redes, mantenimiento y soporte informático.",
-    contactTitle: "Contacto",
-    contactText: "Si quieres hablar conmigo, copia mi email sin que quede visible en pantalla.",
-    recommendationText: "También tengo cartas de recomendación y certificados disponibles para revisar.",
-    recommendation1: "Recomendación IGTP 1",
-    recommendation2: "Recomendación IGTP 2",
-    certificate: "Recomendación Kymos",
-    educationDurationLabel: "Duración",
-    educationModeLabel: "Enfoque",
-    searchHelp: "Filtra proyectos por tecnología o nombre.",
-    copied: "Email copiado"
-  },
-  en: {
-    navProjects: "Projects",
-    navExperience: "Experience",
-    navContact: "Contact",
-    role: "IT & Web Developer",
-    lead: "Higher Technician in Web Application Development. I build projects with TypeScript, React, FastAPI, Python, and R Shiny, backed by systems, IT support, and bioinformatics experience.",
-    viewCv: "View CV",
-    cvCta: "Download CV",
-    copyEmail: "Email",
-    summary1: "I care about building useful software: clear interfaces, working APIs, useful automations, and data visualizations that reduce manual work.",
-    summary2: "DAW completed, SMR systems background, IT Support experience, and R/Shiny work in a biomedical research environment.",
-    statRepos: "public repos",
-    statDaw: "completed",
-    statPython: "Python grade",
-    experienceTitle: "Experience",
-    bioTag: "Bioinformatics",
-    bioPoint1: "Bioinformatics data visualization with R and Shiny.",
-    bioPoint2: "Linux work inside a biomedical research environment.",
-    bioPoint3: "Turning technical data into explorable interfaces.",
-    itPoint1: "Hardware and software support in a pharmaceutical environment.",
-    itPoint2: "Equipment and computer systems maintenance.",
-    itPoint3: "Basic incident management and user support.",
-    projectsTitle: "Projects",
-    code: "Code",
-    repoPermisos: "Final DAW-DAM project: a more serious web product with TypeScript and structure for a real use case.",
-    repoOnePiece: "Full CRUD app with React, Vite, Router, Context API, and json-server. Training project graded 9.5/10.",
-    repoFlota: "Complete game with FastAPI backend, HTML/CSS/JS frontend, difficulty, score, timer, and stats.",
-    repoQR: "Practical tool: generates a custom A4 QR with logo, frame, typography, and direct reviews link.",
-    repoHeatmap: "Bioinformatics app for exploring gene expression with heatmaps and hierarchical clustering.",
-    educationTitle: "Education",
-    dawText: "Frontend, backend, databases, deployment, and complete web projects.",
-    smrText: "Technical base in systems, networks, maintenance, and IT support.",
-    contactTitle: "Contact",
-    contactText: "If you want to talk, copy my email without leaving it visible on screen.",
-    recommendationText: "I also have recommendation letters and certificates available for review.",
-    recommendation1: "IGTP recommendation 1",
-    recommendation2: "IGTP recommendation 2",
-    certificate: "Kymos recommendation",
-    educationDurationLabel: "Duration",
-    educationModeLabel: "Focus",
-    searchHelp: "Filter projects by technology or name.",
-    copied: "Email copied"
-  }
-};
-
-const getLang = () => document.documentElement.lang === "en" ? "en" : "es";
-
-const educationDetails = {
-  es: {
-    daw: {
-      period: "2024 - 2026",
-      title: "GS Desarrollo de Aplicaciones Web",
-      center: "INS La Ferreria - Montcada",
-      description: "Ciclo donde cierro la parte web completa: interfaces, backend, bases de datos, despliegue y proyectos con estructura real.",
-      duration: "2 años",
-      mode: "Producto web",
-      tags: "TypeScript React APIs SQL Git"
-    },
-    smr: {
-      period: "2022 - 2024",
-      title: "GM Sistemas Microinformáticos y Redes",
-      center: "IFP Innovación en Formación Profesional - Barcelona",
-      description: "Base técnica de sistemas: redes, hardware, software, soporte a usuarios y mantenimiento de equipos.",
-      duration: "2 años",
-      mode: "Sistemas e IT",
-      tags: "Linux Windows Redes Hardware Soporte"
-    }
-  },
-  en: {
-    daw: {
-      period: "2024 - 2026",
-      title: "Higher Degree in Web Application Development",
-      center: "INS La Ferreria - Montcada",
-      description: "The cycle where I completed the full web path: interfaces, backend, databases, deployment, and projects with real structure.",
-      duration: "2 years",
-      mode: "Web product",
-      tags: "TypeScript React APIs SQL Git"
-    },
-    smr: {
-      period: "2022 - 2024",
-      title: "Intermediate Degree in Microcomputer Systems and Networks",
-      center: "IFP Innovación en Formación Profesional - Barcelona",
-      description: "Technical systems base: networks, hardware, software, user support, and equipment maintenance.",
-      duration: "2 years",
-      mode: "Systems and IT",
-      tags: "Linux Windows Networks Hardware Support"
-    }
-  }
-};
-
+const getLang = () => ["en", "ca"].includes(document.documentElement.lang) ? document.documentElement.lang : "es";
 const icons = {
   search: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>',
   moon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5Z"></path></svg>',
@@ -156,9 +23,15 @@ const setDeviceButton = (mobile) => {
   button.title = mobile ? "Vista escritorio" : "Vista movil";
 };
 
+const renderSkills = () => {
+  document.querySelector("[data-skills-list]").innerHTML = skills.map(([icon, label]) => (
+    `<span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}" alt="">${label}</span>`
+  )).join("");
+};
+
 const setLang = (lang) => {
   document.documentElement.lang = lang;
-  document.querySelector("[data-lang-toggle]").textContent = lang === "es" ? "EN" : "ES";
+  document.querySelector("[data-lang-toggle]").textContent = ({ es: "EN", en: "CA", ca: "ES" })[lang];
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     node.textContent = copy[lang][node.dataset.i18n];
   });
@@ -173,7 +46,7 @@ const showToast = (message) => {
 };
 
 document.querySelector("[data-lang-toggle]").addEventListener("click", () => {
-  setLang(getLang() === "es" ? "en" : "es");
+  setLang(({ es: "en", en: "ca", ca: "es" })[getLang()]);
 });
 
 document.querySelector("[data-theme-toggle]").addEventListener("click", () => {
@@ -207,6 +80,8 @@ const openEducationDialog = (key) => {
   dialog.querySelector("[data-education-duration]").textContent = data.duration;
   dialog.querySelector("[data-education-mode]").textContent = data.mode;
   dialog.querySelector("[data-education-tags]").textContent = data.tags;
+  const courses = dialog.querySelector("[data-education-courses]");
+  courses.innerHTML = data.courses ? data.courses.map(([title, hours, status]) => `<article><strong>${title}</strong><span>${hours}</span><small>${status}</small></article>`).join("") : "";
   dialog.showModal();
 };
 
@@ -259,5 +134,7 @@ document.querySelectorAll("[data-i18n]").forEach((node) => {
 });
 
 document.querySelector("[data-search-toggle]").innerHTML = icons.search;
+renderSkills();
 setThemeButton(document.documentElement.dataset.theme === "dark");
 setDeviceButton(document.documentElement.dataset.device === "mobile");
+

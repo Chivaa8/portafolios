@@ -1,13 +1,19 @@
 # Portfolio - Oriol Chiva
 
-Portfolio personal estatico para presentar perfil tecnico, experiencia, proyectos destacados y CV descargable.
+Portfolio personal estático para presentar perfil técnico, experiencia, formación, proyectos destacados, CV, recomendaciones y stack.
 
 ## Demo local
 
-Abre `index.html` directamente en el navegador o sirve la carpeta con un servidor estatico:
+Puedes abrir `index.html` directamente o servir la carpeta:
 
 ```bash
 python -m http.server 4173
+```
+
+Después abre:
+
+```text
+http://127.0.0.1:4173/index.html
 ```
 
 ## Estructura
@@ -21,28 +27,39 @@ Portafolio/
     css/
       styles.css
     js/
-      main.js
+      data.js      # textos, traducciones, formación y skills
+      main.js      # eventos, tema, idioma, búsqueda, modales y animaciones
     img/
-      can-ruti.jpg
       hero.jpg
+      profile.jpg
+      can-ruti.jpg
       kymos.jpg
+      project-*.jpg
     docs/
       CV-Oriol-Chiva.pdf
+      carta-recomendacion-oriol.pdf
+      carta-recomendacion.pdf
+      certificado-lsumoy.pdf
 ```
 
 ## Funciones
 
 - Tema claro/oscuro.
-- Cambio ES/EN.
+- Idiomas: ES, EN y CA.
 - Buscador de proyectos.
-- Copiar email sin mostrarlo en pantalla.
-- Ver y descargar CV.
-- Enlaces a GitHub y webs oficiales de experiencia.
+- Vista móvil/escritorio.
+- Contadores animados.
+- Modales de educación con detalles de DAW, SMR y cursos SEAS.
+- Copia de email sin mostrarlo escrito en pantalla.
+- CV visible y descargable.
+- Cartas de recomendación y certificado enlazados.
+- Proyectos con miniaturas, enlaces a código y hover animado.
+- Skills renderizadas desde `assets/js/data.js`.
 
 ## Stack
 
-HTML, CSS y JavaScript vanilla. Sin framework ni build step.
+HTML, CSS y JavaScript vanilla. Sin framework, sin build step y listo para publicar en hosting estático.
 
 ## Despliegue
 
-Este proyecto se puede publicar directamente con GitHub Pages, Netlify, Vercel o cualquier hosting estatico.
+Funciona directamente en GitHub Pages, Netlify, Vercel o cualquier servidor estático.
