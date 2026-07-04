@@ -15,7 +15,7 @@ window.portfolioData = {
       statDaw: "terminado",
       statPython: "nota en Python",
       experienceTitle: "Experiencia",
-      bioTag: "Bioinformática",
+      bioTag: "Bioinformático",
       bioPoint1: "Visualización de datos bioinformáticos con R y Shiny.",
       bioPoint2: "Trabajo en entorno Linux dentro de investigación biomédica.",
       bioPoint3: "Conversión de datos técnicos en interfaces explorables.",
@@ -25,7 +25,7 @@ window.portfolioData = {
       projectsTitle: "Proyectos",
       code: "Código",
       repoPermisos: "Trabajo final de DAW-DAM: producto web más serio, con TypeScript y estructura pensada para un caso real.",
-      repoOnePiece: "CRUD completo con React, Vite, Router, Context API y json-server. Proyecto formativo con 9.5/10.",
+      repoOnePiece: "CRUD completo con React, Vite, Router, Context API y json-server.",
       repoFlota: "Juego completo con backend FastAPI, frontend HTML/CSS/JS, dificultad, puntuación, temporizador y estadísticas.",
       repoCatalogo: "App móvil para organizar un catálogo de videojuegos con una interfaz clara y pensada para consultar rápido.",
       repoHeatmap: "App bioinformática para explorar expresión génica con mapas de calor y clustering jerárquico.",
@@ -35,7 +35,7 @@ window.portfolioData = {
       smrText: "Base técnica en sistemas, redes, mantenimiento y soporte informático.",
       seasText: "Python, Big Data, virtualización y Machine Learning con cursos especializados de 150 horas.",
       contactTitle: "Contacto",
-      contactText: "Si quieres hablar conmigo, copia mi email sin que quede visible en pantalla.",
+      contactText: "Si quieres hablar conmigo te dejo mi email.",
       recommendationText: "También tengo cartas de recomendación y certificados disponibles para revisar.",
       recommendation1: "Recomendación IGTP 1",
       recommendation2: "Recomendación IGTP 2",
@@ -60,7 +60,7 @@ window.portfolioData = {
       statDaw: "completed",
       statPython: "Python grade",
       experienceTitle: "Experience",
-      bioTag: "Bioinformatics",
+      bioTag: "Bioinformatician",
       bioPoint1: "Bioinformatics data visualization with R and Shiny.",
       bioPoint2: "Linux work inside a biomedical research environment.",
       bioPoint3: "Turning technical data into explorable interfaces.",
@@ -70,7 +70,7 @@ window.portfolioData = {
       projectsTitle: "Projects",
       code: "Code",
       repoPermisos: "Final DAW-DAM project: a more serious web product with TypeScript and structure for a real use case.",
-      repoOnePiece: "Full CRUD app with React, Vite, Router, Context API, and json-server. Training project graded 9.5/10.",
+      repoOnePiece: "Full CRUD app with React, Vite, Router, Context API, and json-server.",
       repoFlota: "Complete game with FastAPI backend, HTML/CSS/JS frontend, difficulty, score, timer, and stats.",
       repoCatalogo: "Mobile app for organizing a video game catalog with a clear interface built for quick browsing.",
       repoHeatmap: "Bioinformatics app for exploring gene expression with heatmaps and hierarchical clustering.",
@@ -80,7 +80,7 @@ window.portfolioData = {
       smrText: "Technical base in systems, networks, maintenance, and IT support.",
       seasText: "Python, Big Data, virtualization, and Machine Learning through specialized 150-hour courses.",
       contactTitle: "Contact",
-      contactText: "If you want to talk, copy my email without leaving it visible on screen.",
+      contactText: "If you want to talk, here is my email.",
       recommendationText: "I also have recommendation letters and certificates available for review.",
       recommendation1: "IGTP recommendation 1",
       recommendation2: "IGTP recommendation 2",
@@ -94,16 +94,16 @@ window.portfolioData = {
   educationDetails: {
     es: {
       daw: {
-        period: "2024 - 2026",
+        period: "2023 - 2026",
         title: "GS Desarrollo de Aplicaciones Web",
         center: "INS La Ferreria - Montcada",
         description: "Ciclo donde cierro la parte web completa: interfaces, backend, bases de datos, despliegue y proyectos con estructura real.",
-        duration: "2 años",
+        duration: "3 años",
         mode: "Producto web",
         tags: "TypeScript React APIs SQL Git"
       },
       smr: {
-        period: "2022 - 2024",
+        period: "2021 - 2023",
         title: "GM Sistemas Microinformáticos y Redes",
         center: "IFP Innovación en Formación Profesional - Barcelona",
         description: "Base técnica de sistemas: redes, hardware, software, soporte a usuarios y mantenimiento de equipos.",
@@ -128,16 +128,16 @@ window.portfolioData = {
     },
     en: {
       daw: {
-        period: "2024 - 2026",
+        period: "2023 - 2026",
         title: "Higher Degree in Web Application Development",
         center: "INS La Ferreria - Montcada",
         description: "The cycle where I completed the full web path: interfaces, backend, databases, deployment, and projects with real structure.",
-        duration: "2 years",
+        duration: "3 years",
         mode: "Web product",
         tags: "TypeScript React APIs SQL Git"
       },
       smr: {
-        period: "2022 - 2024",
+        period: "2021 - 2023",
         title: "Intermediate Degree in Microcomputer Systems and Networks",
         center: "IFP Innovación en Formación Profesional - Barcelona",
         description: "Technical systems base: networks, hardware, software, user support, and equipment maintenance.",
@@ -211,7 +211,7 @@ window.portfolioData.copy.ca = {
   statRepos: "repos públics",
   statDaw: "acabat",
   experienceTitle: "Experiència",
-  bioTag: "Bioinformàtica",
+  bioTag: "Bioinformàtic",
   bioPoint1: "Visualització de dades bioinformàtiques amb R i Shiny.",
   bioPoint2: "Treball en entorn Linux dins de recerca biomèdica.",
   bioPoint3: "Conversió de dades tècniques en interfícies explorables.",
@@ -221,7 +221,7 @@ window.portfolioData.copy.ca = {
   projectsTitle: "Projectes",
   code: "Codi",
   repoPermisos: "Treball final de DAW-DAM: producte web més seriós, amb TypeScript i estructura pensada per a un cas real.",
-  repoOnePiece: "CRUD complet amb React, Vite, Router, Context API i json-server. Projecte formatiu amb 9.5/10.",
+  repoOnePiece: "CRUD complet amb React, Vite, Router, Context API i json-server.",
   repoFlota: "Joc complet amb backend FastAPI, frontend HTML/CSS/JS, dificultat, puntuació, temporitzador i estadístiques.",
   repoCatalogo: "App mòbil per organitzar un catàleg de videojocs amb una interfície clara i pensada per consultar ràpid.",
   repoHeatmap: "App bioinformàtica per explorar expressió gènica amb mapes de calor i clustering jeràrquic.",
@@ -231,7 +231,7 @@ window.portfolioData.copy.ca = {
   smrText: "Base tècnica en sistemes, xarxes, manteniment i suport informàtic.",
   seasText: "Python, Big Data, virtualització i Machine Learning amb cursos especialitzats de 150 hores.",
   contactTitle: "Contacte",
-  contactText: "Si vols parlar amb mi, copia el meu email sense que quedi visible en pantalla.",
+  contactText: "Si vols parlar amb mi, et deixo el meu email.",
   recommendationText: "També tinc cartes de recomanació i certificats disponibles per revisar.",
   recommendation1: "Recomanació IGTP 1",
   recommendation2: "Recomanació IGTP 2",
@@ -246,7 +246,7 @@ window.portfolioData.educationDetails.ca = {
     ...window.portfolioData.educationDetails.es.daw,
     title: "GS Desenvolupament d'Aplicacions Web",
     description: "Cicle on tanco la part web completa: interfícies, backend, bases de dades, desplegament i projectes amb estructura real.",
-    duration: "2 anys",
+    duration: "3 anys",
     mode: "Producte web"
   },
   smr: {
@@ -269,3 +269,4 @@ window.portfolioData.educationDetails.ca = {
     ]
   }
 };
+
