@@ -721,3 +721,10 @@ h3 {
     max-width: 100%;
   }
 }
+
+.dialog-fallback {
+  inset: 20vh auto auto 50%;
+  position: fixed;
+  transform: translateX(-50%);
+  z-index: 20;
+}

@@ -42,7 +42,7 @@ window.portfolioData = {
       certificate: "Recomendación Kymos",
       educationDurationLabel: "Duración",
       educationModeLabel: "Enfoque",
-      searchHelp: "Filtra proyectos por tecnología o nombre.",
+      searchHelp: "Pulsa Enter para ir al proyecto encontrado.",
       copied: "Email copiado"
     },
     en: {
@@ -87,7 +87,7 @@ window.portfolioData = {
       certificate: "Kymos recommendation",
       educationDurationLabel: "Duration",
       educationModeLabel: "Focus",
-      searchHelp: "Filter projects by technology or name.",
+      searchHelp: "Press Enter to jump to the matching project.",
       copied: "Email copied"
     }
   },
@@ -237,7 +237,7 @@ window.portfolioData.copy.ca = {
   recommendation2: "Recomanació IGTP 2",
   certificate: "Recomanació Kymos",
   educationDurationLabel: "Durada",
-  searchHelp: "Filtra projectes per tecnologia o nom.",
+  searchHelp: "Prem Enter per anar al projecte trobat.",
   copied: "Email copiat"
 };
 

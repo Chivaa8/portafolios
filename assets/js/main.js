@@ -45,6 +45,14 @@ const showToast = (message) => {
   showToast.timer = window.setTimeout(() => toast.classList.remove("show"), 1700);
 };
 
+const openDialog = (dialog) => {
+  if (dialog.showModal) {
+    dialog.showModal();
+    return;
+  }
+  dialog.setAttribute("open", "");
+  dialog.classList.add("dialog-fallback");
+};
 document.querySelector("[data-lang-toggle]").addEventListener("click", () => {
   setLang(({ es: "en", en: "ca", ca: "es" })[getLang()]);
 });
@@ -82,7 +90,7 @@ const openEducationDialog = (key) => {
   dialog.querySelector("[data-education-tags]").textContent = data.tags;
   const courses = dialog.querySelector("[data-education-courses]");
   courses.innerHTML = data.courses ? data.courses.map(([title, hours, status]) => `<article><strong>${title}</strong><span>${hours}</span><small>${status}</small></article>`).join("") : "";
-  dialog.showModal();
+  openDialog(dialog);
 };
 
 document.querySelectorAll("[data-education-open]").forEach((card) => {
@@ -96,15 +104,44 @@ document.querySelectorAll("[data-education-open]").forEach((card) => {
 
 document.querySelector("[data-search-toggle]").addEventListener("click", () => {
   const dialog = document.querySelector("[data-search-dialog]");
-  dialog.showModal();
+  openDialog(dialog);
   dialog.querySelector("input").focus();
 });
 
-document.querySelector("[data-search-input]").addEventListener("input", (event) => {
-  const query = event.target.value.trim().toLowerCase();
-  document.querySelectorAll(".project-card").forEach((card) => {
-    card.classList.toggle("is-hidden", query && !card.dataset.search.includes(query));
+document.querySelectorAll("[data-download-cv]").forEach((link) => {
+  link.addEventListener("click", async (event) => {
+    if (location.protocol === "file:") return;
+    event.preventDefault();
+    const response = await fetch(link.href);
+    const blobUrl = URL.createObjectURL(await response.blob());
+    const download = document.createElement("a");
+    download.href = blobUrl;
+    download.download = link.download;
+    document.body.append(download);
+    download.click();
+    download.remove();
+    URL.revokeObjectURL(blobUrl);
   });
+});
+
+const searchInput = document.querySelector("[data-search-input]");
+
+searchInput.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter") return;
+  event.preventDefault();
+  const query = searchInput.value.trim().toLowerCase();
+  if (!query) return;
+  const card = [...document.querySelectorAll(".project-card")].find((project) => (
+    `${project.dataset.search} ${project.textContent}`.toLowerCase().includes(query)
+  ));
+  if (!card) {
+    showToast("No encontrado");
+    return;
+  }
+  const dialog = document.querySelector("[data-search-dialog]");
+  if (dialog.close) dialog.close();
+  dialog.removeAttribute("open");
+  card.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 
 const animateMetric = (node) => {
