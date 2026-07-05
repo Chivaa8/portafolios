@@ -301,6 +301,44 @@ h3 {
   width: 24px;
 }
 
+.private-repo-card {
+  align-items: center;
+  background: var(--paper);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  color: var(--text);
+  display: grid;
+  gap: 16px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  margin-top: 24px;
+  max-width: 680px;
+  padding: 18px;
+}
+
+.private-repo-card svg {
+  fill: currentColor;
+  height: 52px;
+  width: 52px;
+}
+
+.private-repo-card strong,
+.private-repo-card small,
+.private-repo-card em {
+  display: block;
+}
+
+.private-repo-card small {
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.private-repo-card em {
+  color: var(--accent-2);
+  font-style: normal;
+  font-weight: 800;
+}
+
+
 .social-links {
   color: var(--muted);
   margin-top: 16px;
@@ -900,8 +938,8 @@ h3 {
 
 [data-reveal] {
   opacity: 0;
-  transform: translateY(26px);
-  transition: opacity 520ms ease, transform 520ms cubic-bezier(.2,.8,.2,1);
+  transform: translateY(56px);
+  transition: opacity 220ms ease-out, transform 220ms cubic-bezier(.18,.9,.2,1);
 }
 
 [data-reveal].is-visible {
