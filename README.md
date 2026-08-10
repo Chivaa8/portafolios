@@ -1,4 +1,4 @@
-# Portfolio - Oriol Chiva
+# Oriol Chiva
 
 Portfolio personal estático para presentar perfil técnico, experiencia, formación, proyectos destacados, CV, recomendaciones y stack.
 
@@ -63,3 +63,7 @@ HTML, CSS y JavaScript vanilla. Sin framework, sin build step y listo para publi
 ## Despliegue
 
 Funciona directamente en GitHub Pages, Netlify, Vercel o cualquier servidor estático.
+
+## Enlace
+
+https://chivaa8.github.io/portafolios/#inicio
