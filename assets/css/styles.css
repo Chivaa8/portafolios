@@ -655,6 +655,74 @@ h3 {
   grid-column: 1 / -1;
 }
 
+.resume-item img.company-logo {
+  background: white;
+  object-fit: contain;
+  padding: 16px;
+}
+
+.hero-links .mobility-line {
+  color: var(--muted);
+  gap: 24px;
+}
+
+.hero-links .mobility-line > span {
+  align-items: center;
+  display: inline-flex;
+  font-size: inherit;
+  gap: 7px;
+}
+
+.hero-links .mobility-line svg {
+  color: var(--accent-2);
+  height: 18px;
+  width: 18px;
+}
+
+.skill-groups {
+  display: grid;
+  gap: 26px;
+}
+
+.skill-group h3 {
+  color: var(--accent-2);
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.course-certificate {
+  align-items: center;
+  color: var(--accent-2);
+  display: inline-flex;
+  font-size: 0.82rem;
+  font-weight: 500;
+  gap: 7px;
+  grid-column: 1 / -1;
+  width: fit-content;
+}
+
+.course-certificate svg {
+  fill: currentColor;
+  height: 16px;
+  width: 16px;
+}
+
+.contact-link-group + .contact-link-group {
+  margin-top: 24px;
+}
+
+.contact-link-group h3 {
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.contact-link-group .quick-links {
+  margin-top: 0;
+}
+
 .toast {
   background: var(--text);
   border-radius: 999px;
@@ -712,6 +780,14 @@ h3 {
 
 .footer-icons {
   gap: 18px;
+}
+
+.footer-icons button {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
 }
 
 .is-hidden {

@@ -2,18 +2,23 @@
 
 Portfolio personal estático para presentar perfil técnico, experiencia, formación, proyectos destacados, CV, recomendaciones y stack.
 
+## Enlaces
+
+- LinkedIn: https://www.linkedin.com/in/oriol-chiva-hidalgo/
+- GitHub: https://github.com/Chivaa8
+
 ## Demo local
 
 Puedes abrir `index.html` directamente o servir la carpeta:
 
 ```bash
-python -m http.server 4173
+python -m http.server 8000
 ```
 
 Después abre:
 
 ```text
-http://127.0.0.1:4173/index.html
+http://127.0.0.1:8000/
 ```
 
 ## Estructura
@@ -52,6 +57,7 @@ Portafolio/
 - Modales de educación con detalles de DAW, SMR y cursos SEAS.
 - Copia de email sin mostrarlo escrito en pantalla.
 - CV visible y descargable.
+- LinkedIn y GitHub enlazados desde el portfolio.
 - Cartas de recomendación y certificado enlazados.
 - Proyectos con miniaturas, enlaces a código y hover animado.
 - Skills renderizadas desde `assets/js/data.js`.

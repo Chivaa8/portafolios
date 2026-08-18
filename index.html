@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="es" data-theme="dark">
+<html lang="es" data-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Portfolio de Oriol Chiva, IT & Web Developer con proyectos en React, TypeScript, FastAPI, Python y R Shiny.">
     <title>Oriol Chiva | Portfolio</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="assets/js/data.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <link rel="stylesheet" href="assets/css/styles.css?v=9">
+    <script src="assets/js/data.js?v=12" defer></script>
+    <script src="assets/js/main.js?v=10" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -27,8 +27,8 @@
       <section class="profile hero-splash">
         <img class="profile-photo" src="assets/img/profile.jpg" alt="Oriol Chiva" loading="eager">
         <div class="hero-copy">
-          <h1 data-i18n="role">IT & Web Developer</h1>
-          <p class="lead" data-i18n="lead">Desarrollador web full-stack certificado en Desarrollo de Aplicaciones Web, con base real en sistemas e IT Support y orientación a bioinformática. Construyo productos claros con TypeScript, React, FastAPI, Python y R/Shiny.</p>
+          <h1 data-i18n="role">FULL-STACK DEVELOPER</h1>
+          <p class="lead" data-i18n="lead">Desarrollador Full-Stack especializado en TypeScript, Angular, Node.js y Python, con experiencia desarrollando aplicaciones web completas, desde interfaces y lógica de negocio hasta APIs REST, bases de datos y arquitectura backend.</p>
           <div class="hero-links" aria-label="Acciones principales">
             <a href="https://github.com/Chivaa8" target="_blank" rel="noreferrer">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.5 21.8c.6.1.8-.2.8-.5v-2c-3.4.8-4.1-1.4-4.1-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.7 4.7 0 0 1 1.2-3.2c-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.2 11.2 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .5.4.9 1.2.9 2.4v2.8c0 .3.2.6.8.5A11.2 11.2 0 0 0 12 .8Z"/></svg>
@@ -50,40 +50,56 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3V5Zm2 2v.4l7 4.4 7-4.4V7H5Zm14 2.7-7 4.4-7-4.4V17h14V9.7Z"/></svg>
               <span data-i18n="copyEmail">Email</span>
             </button>
-            <span>Badalona, Barcelona</span>
+            <span class="mobility-line">
+              <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.1 7 13 7 13s7-7.9 7-13a7 7 0 0 0-7-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>Badalona, Barcelona</span>
+              <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 11 1.5-4.5A2.2 2.2 0 0 1 8.6 5h6.8a2.2 2.2 0 0 1 2.1 1.5L19 11a3 3 0 0 1 2 2.8V19h-2v2h-3v-2H8v2H5v-2H3v-5.2A3 3 0 0 1 5 11Zm3.6-4-1.3 4h9.4l-1.3-4H8.6ZM6 13a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm12 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg><span data-i18n="mobility">Carnet B · Vehículo propio</span></span>
+            </span>
           </div>
         </div>
       </section>
 
       <section class="summary">
         <p data-i18n="summary1">
-          Mi perfil combina desarrollo web y datos: puedo crear interfaces, APIs y herramientas internas, pero también trabajar con visualización y automatización en contextos técnicos como bioinformática.
+          Mi perfil combina desarrollo de software, sistemas y datos. Mi experiencia me ha llevado desde el soporte IT y los sistemas hasta el desarrollo de aplicaciones web y la bioinformática, lo que me permite entender un proyecto más allá del código.
         </p>
         <p data-i18n="summary2">
-          Vengo de sistemas y soporte, así que no solo hago pantallas: entiendo usuarios, incidencias, despliegue, datos y mantenimiento de software en entornos reales.
+          Actualmente trabajo en proyectos reales de desarrollo Full-Stack, participando en la creación de aplicaciones, interfaces, APIs, bases de datos y lógica de negocio. Además, he reforzado mi perfil con formación avanzada en Python, Big Data y Machine Learning.
         </p>
-      </section>
-
-      <section class="metrics" aria-label="Datos rápidos">
-        <article><strong data-count="14">0</strong><span data-i18n="statRepos">repos reales</span></article>
-        <article><strong>Full-stack</strong><span data-i18n="statDaw">producto real</span></article>
-        <article><strong data-count="9.94">0</strong><span data-i18n="statPython">nota en Python</span></article>
+        <p data-i18n="summary3">
+          Me gusta entender el problema antes de programarlo, construir soluciones mantenibles y aprender las tecnologías que necesite cada proyecto. Busco seguir creciendo como desarrollador y aportar una visión técnica amplia desde el primer día.
+        </p>
       </section>
 
       <section class="section" id="experiencia">
         <h2 data-i18n="experienceTitle">Experiencia</h2>
+        <article class="resume-item">
+          <a class="work-photo" href="https://6profiles.com/" target="_blank" rel="noreferrer" aria-label="Web oficial de 6Profiles Consulting">
+            <img class="company-logo" src="assets/img/6profiles.webp" alt="Logotipo de 6Profiles Consulting" loading="lazy">
+            <span>6Profiles</span>
+          </a>
+          <div>
+            <h3><a href="https://6profiles.com/" target="_blank" rel="noreferrer" aria-label="6Profiles Consulting SL, web oficial">6Profiles Consulting SL <span aria-hidden="true">↗</span></a></h3>
+            <p class="item-meta" data-i18n="profilesRole">Full-Stack Developer</p>
+            <ul>
+              <li data-i18n="profilesPoint1">Desarrollo y mantenimiento de funcionalidades Full-Stack, incluyendo operaciones CRUD.</li>
+              <li data-i18n="profilesPoint2">Integración de frontend, backend, APIs y persistencia de datos dentro de una aplicación existente.</li>
+              <li data-i18n="profilesPoint3">Trabajo colaborativo con Git y GitHub, utilizando ramas y control de versiones, junto con reuniones de seguimiento y coordinación mediante Slack.</li>
+            </ul>
+            <p class="tags">Angular Next.js TypeScript Tailwind REST APIs Git/GitHub Slack</p>
+          </div>
+        </article>
         <article class="resume-item">
           <a class="work-photo" href="https://www.hospitalgermanstrias.cat/" target="_blank" rel="noreferrer" aria-label="Web oficial Hospital Germans Trias i Pujol">
             <img src="assets/img/can-ruti.jpg" alt="Hospital Germans Trias i Pujol, Can Ruti" loading="lazy">
             <span>Can Ruti</span>
           </a>
           <div>
-            <h3>Institut Germans Trias i Pujol</h3>
+            <h3><a href="https://www.hospitalgermanstrias.cat/" target="_blank" rel="noreferrer" aria-label="Institut Germans Trias i Pujol, web oficial">Institut Germans Trias i Pujol <span aria-hidden="true">↗</span></a></h3>
             <p class="item-meta" data-i18n="bioTag">Bioinformático</p>
             <ul>
               <li data-i18n="bioPoint1">Visualización de datos bioinformáticos con R y Shiny.</li>
               <li data-i18n="bioPoint2">Trabajo en entorno Linux dentro de investigación biomédica.</li>
-              <li data-i18n="bioPoint3">Conversión de datos técnicos en interfaces explorables.</li>
+              <li data-i18n="bioPoint3">Desarrollo de visualizaciones interactivas para explorar datos bioinformáticos.</li>
             </ul>
             <p class="tags">R Shiny Python Linux Bioinformática Datos</p>
           </div>
@@ -94,12 +110,12 @@
             <span>Kymos</span>
           </a>
           <div>
-            <h3>Kymos</h3>
+            <h3><a href="https://kymos.com/" target="_blank" rel="noreferrer" aria-label="Kymos, web oficial">Kymos <span aria-hidden="true">↗</span></a></h3>
             <p class="item-meta">IT Support</p>
             <ul>
               <li data-i18n="itPoint1">Soporte técnico de hardware y software en entorno farmacéutico.</li>
               <li data-i18n="itPoint2">Mantenimiento de equipos y sistemas informáticos.</li>
-              <li data-i18n="itPoint3">Gestión básica de incidencias y soporte a usuarios.</li>
+              <li data-i18n="itPoint3">Gestión de incidencias y soporte a usuarios.</li>
             </ul>
             <p class="tags">Windows Linux Hardware Software Usuarios</p>
           </div>
@@ -109,51 +125,15 @@
       <section class="section" id="proyectos">
         <h2 data-i18n="projectsTitle">Proyectos</h2>
         <div class="project-list">
-          <article class="project-card" data-project="permisos" data-search="mongodb node express typescript angular javascript html css tailwind daw dam permisos laborales producto frontend" tabindex="0">
+          <article class="project-card" data-project="permisos" data-search="mongodb node express typescript angular javascript html css tailwind docker daw dam permisos laborales producto frontend" tabindex="0">
             <div class="project-thumb"><img src="assets/img/project-permisos.jpg" alt="Vista del gestor de permisos laborales" loading="lazy"><div class="project-actions">
                 <a href="https://github.com/Chivaa8/gestor-permisos-laborales" target="_blank" rel="noreferrer" data-i18n="code">Código</a>
               </div></div>
             <div>
               <h3>Gestor permisos laborales</h3>
-              <p data-i18n="repoPermisos">Trabajo final de DAW-DAM: producto web más serio, con TypeScript y estructura pensada para un caso real.</p>
+              <p data-i18n="repoPermisos">Aplicación Full-Stack para gestionar permisos y vacaciones de empleados, con autenticación, roles, panel administrativo y seguimiento de solicitudes.</p>
 
-              <p class="tags">MongoDB Node Express TypeScript Angular JavaScript HTML CSS Tailwind</p>
-            </div>
-          </article>
-
-          <article class="project-card" data-project="onepiece" data-search="react vite javascript api html css crud router context json-server one piece" tabindex="0">
-            <div class="project-thumb"><img src="assets/img/project-onepiece.jpg" alt="Vista del proyecto One Piece" loading="lazy"><div class="project-actions">
-                <a href="https://github.com/Chivaa8/One-Piece" target="_blank" rel="noreferrer" data-i18n="code">Código</a>
-              </div></div>
-            <div>
-              <h3>One Piece</h3>
-              <p data-i18n="repoOnePiece">CRUD completo con React, Vite, Router, Context API y json-server.</p>
-
-              <p class="tags">React Vite JavaScript API HTML CSS</p>
-            </div>
-          </article>
-
-          <article class="project-card" data-project="flota" data-search="python fastapi javascript html css juego hundir flota backend frontend" tabindex="0">
-            <div class="project-thumb"><img src="assets/img/project-flota.jpg" alt="Vista del juego Hundir la Flota" loading="lazy"><div class="project-actions">
-                <a href="https://github.com/Chivaa8/Hundir-Flota" target="_blank" rel="noreferrer" data-i18n="code">Código</a>
-              </div></div>
-            <div>
-              <h3>Hundir la Flota</h3>
-              <p data-i18n="repoFlota">Juego completo con backend FastAPI, frontend HTML/CSS/JS, dificultad, puntuación, temporizador y estadísticas.</p>
-
-              <p class="tags">Python FastAPI JavaScript HTML CSS</p>
-            </div>
-          </article>
-
-          <article class="project-card" data-project="videojuegos" data-search="react native mobile javascript movil videojuegos catalogo" tabindex="0">
-            <div class="project-thumb"><img src="assets/img/project-videojuegos.jpg" alt="Vista del catálogo de videojuegos" loading="lazy"><div class="project-actions">
-                <a href="https://github.com/Chivaa8/Catalogo-Videojuegos" target="_blank" rel="noreferrer" data-i18n="code">Código</a>
-              </div></div>
-            <div>
-              <h3>Catálogo Videojuegos</h3>
-              <p data-i18n="repoCatalogo">App móvil para organizar un catálogo de videojuegos con una interfaz clara y pensada para consultar rápido.</p>
-
-              <p class="tags">React Native Mobile JavaScript</p>
+              <p class="tags">MongoDB Node Express TypeScript Angular JavaScript HTML CSS Tailwind Docker</p>
             </div>
           </article>
 
@@ -163,9 +143,45 @@
               </div></div>
             <div>
               <h3>Cluster Heatmap App</h3>
-              <p data-i18n="repoHeatmap">App bioinformática para explorar expresión génica con mapas de calor y clustering jerárquico.</p>
+              <p data-i18n="repoHeatmap">Aplicación bioinformática desarrollada en un entorno profesional para explorar expresión génica mediante heatmaps y clustering jerárquico.</p>
 
               <p class="tags">R Shiny Datos Virtualización Bioinformática</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="flota" data-search="python fastapi javascript html css juego hundir flota backend frontend" tabindex="0">
+            <div class="project-thumb"><img src="assets/img/project-flota.jpg" alt="Vista del juego Hundir la Flota" loading="lazy"><div class="project-actions">
+                <a href="https://github.com/Chivaa8/Hundir-Flota" target="_blank" rel="noreferrer" data-i18n="code">Código</a>
+              </div></div>
+            <div>
+              <h3>Hundir la Flota</h3>
+              <p data-i18n="repoFlota">Juego web Full-Stack con backend en Python/FastAPI, diferentes niveles de dificultad, puntuación, temporizador y estadísticas de partida.</p>
+
+              <p class="tags">Python FastAPI JavaScript HTML CSS</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="onepiece" data-search="react vite javascript api html css crud router context json-server one piece" tabindex="0">
+            <div class="project-thumb"><img src="assets/img/project-onepiece.jpg" alt="Vista del proyecto One Piece" loading="lazy"><div class="project-actions">
+                <a href="https://github.com/Chivaa8/One-Piece" target="_blank" rel="noreferrer" data-i18n="code">Código</a>
+              </div></div>
+            <div>
+              <h3>One Piece</h3>
+              <p data-i18n="repoOnePiece">Aplicación CRUD desarrollada con React para consultar y gestionar personajes, utilizando Router, Context API y una API simulada con json-server.</p>
+
+              <p class="tags">React Vite Router Context API json-server</p>
+            </div>
+          </article>
+
+          <article class="project-card" data-project="videojuegos" data-search="react native expo mobile javascript movil videojuegos catalogo" tabindex="0">
+            <div class="project-thumb"><img src="assets/img/project-videojuegos.jpg" alt="Vista del catálogo de videojuegos" loading="lazy"><div class="project-actions">
+                <a href="https://github.com/Chivaa8/Catalogo-Videojuegos" target="_blank" rel="noreferrer" data-i18n="code">Código</a>
+              </div></div>
+            <div>
+              <h3>Catálogo Videojuegos</h3>
+              <p data-i18n="repoCatalogo">Aplicación móvil desarrollada con React Native y Expo para consultar videojuegos, puntuaciones, plataformas y descripciones.</p>
+
+              <p class="tags">React Native Expo JavaScript</p>
             </div>
           </article>
           <a class="private-repo-card" href="#contacto">
@@ -188,7 +204,7 @@
               <p class="item-meta">INS La Ferreria - Montcada</p>
               <h3>GS Desarrollo de Aplicaciones Web</h3>
               <p data-i18n="dawText">Frontend, backend, bases de datos, despliegue y proyectos web completos.</p>
-              <p class="tags">HTML CSS Java Python JavaScript SQL GitHub R</p>
+              <p class="tags">TypeScript Angular React Node.js SQL Git</p>
             </div>
             <strong>DAW</strong>
           </article>
@@ -207,8 +223,8 @@
             <div>
               <p class="item-meta">SEAS Estudios Superiores Abiertos</p>
               <h3>Formación complementaria</h3>
-              <p data-i18n="seasText">Python, Big Data, virtualización y Machine Learning con cursos especializados de 150 horas.</p>
-              <p class="tags">R Virtualización Machine Learning Big Data IA</p>
+              <p data-i18n="seasText">Formación técnica en Python, Big Data, virtualización y Machine Learning.</p>
+              <p class="tags">Python Big Data Virtualización Machine Learning IA</p>
             </div>
             <strong>SEAS</strong>
           </article>
@@ -217,14 +233,16 @@
 
       <section class="section" id="skills">
         <h2 data-i18n="skillsTitle">Skills</h2>
-        <div class="skill-cloud" data-skills-list aria-label="Tecnologías"></div>
+        <div class="skill-groups" data-skills-list aria-label="Tecnologías"></div>
       </section>
 
       <section class="section contact" id="contacto">
         <h2 data-i18n="contactTitle">Contacto</h2>
-        <p data-i18n="contactText">Si quieres hablar conmigo te dejo mi email.</p>
-        <p data-i18n="recommendationText">También tengo cartas de recomendación y certificados disponibles para revisar.</p>
-        <div class="quick-links">
+        <p data-i18n="contactText">Estoy abierto a nuevas oportunidades en desarrollo de software. Puedes contactar conmigo por email o LinkedIn.</p>
+        <p data-i18n="recommendationText">También puedes consultar mi CV, cartas de recomendación y certificaciones.</p>
+        <div class="contact-link-group">
+          <h3 data-i18n="contactProfiles">Contacto y perfiles</h3>
+          <div class="quick-links">
           <button type="button" data-copy-email>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3V5Zm2 2v.4l7 4.4 7-4.4V7H5Zm14 2.7-7 4.4-7-4.4V17h14V9.7Z"/></svg>
             <span data-i18n="copyEmail">Email</span>
@@ -237,6 +255,11 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.9 8.8H3.7V20h3.2V8.8ZM5.3 7.3a1.9 1.9 0 1 0 0-3.8 1.9 1.9 0 0 0 0 3.8ZM20.3 20h-3.2v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V20H10V8.8h3.1v1.5h.1a3.4 3.4 0 0 1 3-1.7c3.2 0 3.8 2.1 3.8 4.9V20h.3Z"/></svg>
             LinkedIn
           </a>
+          </div>
+        </div>
+        <div class="contact-link-group">
+          <h3 data-i18n="contactDocuments">CV y documentación</h3>
+          <div class="quick-links">
           <a href="assets/docs/CV-Oriol-Chiva.pdf" target="_blank" rel="noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6V2Zm8 1.8V8h4.2L14 3.8ZM8 4v16h10V10h-6V4H8Zm2 8h6v2h-6v-2Zm0 4h6v2h-6v-2Z"/></svg>
             <span data-i18n="viewCv">Ver CV</span>
@@ -247,25 +270,24 @@
           </a>
           <a href="assets/docs/carta-recomendacion-oriol.pdf" target="_blank" rel="noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6V2Zm8 1.8V8h4.2L14 3.8ZM8 4v16h10V10h-6V4H8Zm2 8h6v2h-6v-2Zm0 4h6v2h-6v-2Z"/></svg>
-            <span data-i18n="recommendation1">Recomendación IGTP 1</span>
+            <span data-i18n="recommendation1">Carta IGTP · Bioinformática</span>
           </a>
           <a href="assets/docs/certificado-lsumoy.pdf" target="_blank" rel="noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6V2Zm8 1.8V8h4.2L14 3.8ZM8 4v16h10V10h-6V4H8Zm2 8h6v2h-6v-2Zm0 4h6v2h-6v-2Z"/></svg>
-            <span data-i18n="recommendation2">Recomendación IGTP 2</span>
+            <span data-i18n="recommendation2">Certificado IGTP · Prácticas</span>
           </a>
           <a href="assets/docs/carta-recomendacion.pdf" target="_blank" rel="noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6V2Zm8 1.8V8h4.2L14 3.8ZM8 4v16h10V10h-6V4H8Zm2 8h6v2h-6v-2Zm0 4h6v2h-6v-2Z"/></svg>
-            <span data-i18n="certificate">Recomendación Kymos</span>
+            <span data-i18n="certificate">Carta Kymos · IT</span>
           </a>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div>
-        <a href="https://github.com/Chivaa8" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/oriol-chiva-hidalgo/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <span>© 2026 IT & Web Developer</span>
+        <span>© 2026 Oriol Chiva</span>
       </div>
       <div class="footer-icons">
         <a href="https://github.com/Chivaa8" target="_blank" rel="noreferrer" aria-label="GitHub">
@@ -274,9 +296,9 @@
         <a href="https://www.linkedin.com/in/oriol-chiva-hidalgo/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.9 8.8H3.7V20h3.2V8.8ZM5.3 7.3a1.9 1.9 0 1 0 0-3.8 1.9 1.9 0 0 0 0 3.8ZM20.3 20h-3.2v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V20H10V8.8h3.1v1.5h.1a3.4 3.4 0 0 1 3-1.7c3.2 0 3.8 2.1 3.8 4.9V20h.3Z"/></svg>
         </a>
-        <a href="#inicio" aria-label="Subir arriba">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 8-8v2a6 6 0 0 0-6 6H4Zm0 0h2a6 6 0 0 0 6 6v2a8 8 0 0 1-8-8Zm8-8a8 8 0 0 1 8 8h-2a6 6 0 0 0-6-6V4Zm8 8a8 8 0 0 1-8 8v-2a6 6 0 0 0 6-6h2Z"/></svg>
-        </a>
+        <button type="button" data-copy-discord aria-label="Discord: chiva8" title="Copiar Discord: chiva8">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 5.3A17 17 0 0 0 15.4 4l-.5 1a15.5 15.5 0 0 0-5.8 0l-.5-1a17 17 0 0 0-4.1 1.3C1.9 9.1 1.2 12.8 1.6 16.4a16.7 16.7 0 0 0 5 2.5l1.2-1.7a10.5 10.5 0 0 1-1.9-.9l.5-.4a12 12 0 0 0 11.2 0l.5.4a10.5 10.5 0 0 1-1.9.9l1.2 1.7a16.7 16.7 0 0 0 5-2.5c.5-4.2-.8-7.9-2.9-11.1ZM8.5 14.5c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm7 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg>
+        </button>
       </div>
     </footer>
 
@@ -288,7 +310,8 @@
       <p class="eyebrow" data-project-grade></p>
       <h2 data-project-title></h2>
       <p data-project-description></p>
-      <p class="item-meta" data-project-note></p>
+      <p data-project-note></p>
+      <p data-project-context></p>
     </dialog>
 
     <dialog class="search-dialog" data-search-dialog>
@@ -311,8 +334,8 @@
       <p class="item-meta" data-education-center></p>
       <p data-education-description></p>
       <div class="education-detail-grid">
-        <span><strong data-education-duration></strong><small data-i18n="educationDurationLabel">Duración</small></span>
-        <span><strong data-education-mode></strong><small data-i18n="educationModeLabel">Enfoque</small></span>
+        <span><strong data-education-duration></strong><small data-education-duration-label>Duración</small></span>
+        <span><strong data-education-mode></strong><small data-education-mode-label>Enfoque</small></span>
       </div>
       <div class="course-list" data-education-courses></div>
       <p class="tags" data-education-tags></p>

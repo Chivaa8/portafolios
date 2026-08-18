@@ -1,5 +1,6 @@
 ﻿const { copy, educationDetails, skills } = window.portfolioData;
 const email = ["oriolchiva8", "gmail.com"].join("@");
+const discord = "chiva8";
 const getLang = () => ["en", "ca"].includes(document.documentElement.lang) ? document.documentElement.lang : "es";
 const header = document.querySelector(".site-header");
 let lastScrollY = window.scrollY;
@@ -8,97 +9,100 @@ const projectDetails = {
   es: {
     permisos: {
       title: "Gestor permisos laborales",
-      grade: "Nota inicial: 8 / 10",
-      description: "Aplicación web para gestionar permisos, vacaciones y disponibilidad del equipo. Es el proyecto más orientado a producto: roles, panel administrativo, calendario y una interfaz pensada para uso real.",
-      note: "Después de la entrega lo amplié para que sea utilizable en cualquier empresa."
+      grade: "PROYECTO FINAL DAW",
+      description: "Aplicación Full-Stack para centralizar la gestión de permisos, vacaciones y solicitudes laborales dentro de una empresa. Incluye autenticación, diferentes roles de usuario, panel administrativo, calendario y seguimiento del estado de las solicitudes.",
+      note: "Desarrollé tanto el frontend como el backend, utilizando Angular y TypeScript para la interfaz y Node.js, Express y MongoDB para la API y persistencia de datos, además de Docker para facilitar la ejecución y despliegue del entorno.",
+      context: "El proyecto nació como trabajo final de DAW y, tras la entrega, continué desarrollándolo y ampliándolo para convertirlo en una solución adaptable a diferentes empresas."
     },
     onepiece: {
       title: "One Piece",
-      grade: "Nota: 9,50 / 10",
-      description: "CRUD completo hecho con React, Vite, Router, Context API y json-server. Permite consultar, crear, modificar, eliminar y reservar personajes con una estética muy marcada.",
-      note: "El medio punto que faltó fue por la memoria, no por el funcionamiento de la aplicación."
+      grade: "FRONTEND · REACT",
+      description: "Aplicación CRUD desarrollada con React y Vite para gestionar personajes de One Piece. Permite consultar, crear, editar, eliminar y reservar personajes mediante una interfaz inspirada en el universo de la serie.",
+      note: "El proyecto utiliza React Router para la navegación, Context API para la gestión del estado y json-server como API durante el desarrollo."
     },
     flota: {
       title: "Hundir la Flota",
-      grade: "Nota: 9,60 / 10",
-      description: "Juego completo con backend FastAPI y frontend HTML, CSS y JavaScript. Incluye generación de tablero, dificultad, disparos, puntuación, temporizador y estadísticas de partida.",
-      note: "Proyecto formativo con captura real del frontend funcionando."
+      grade: "FULL-STACK · PYTHON / FASTAPI",
+      description: "Juego web completo desarrollado con backend en Python y FastAPI y frontend en HTML, CSS y JavaScript.",
+      note: "Implementa generación dinámica del tablero, diferentes niveles de dificultad, sistema de disparos, puntuación, temporizador y estadísticas de partida, integrando la lógica del juego con una API desarrollada específicamente para la aplicación."
     },
     videojuegos: {
       title: "Catálogo Videojuegos",
-      grade: "Nota: 10 / 10",
-      description: "Catálogo interactivo inspirado en Metacritic para consultar videojuegos, puntuaciones, plataformas y descripciones. La interfaz está pensada para lectura rápida en móvil.",
-      note: "Proyecto calificado con la máxima nota."
+      grade: "MOBILE · REACT NATIVE",
+      description: "Aplicación móvil inspirada en Metacritic para consultar un catálogo de videojuegos, puntuaciones, plataformas y descripciones.",
+      note: "Desarrollada con React Native y Expo, con una interfaz diseñada específicamente para dispositivos móviles y enfocada en facilitar la consulta y navegación del catálogo."
     },
     heatmap: {
       title: "Cluster Heatmap App",
-      grade: "Proyecto para empresa",
-      description: "Aplicación bioinformática para cargar matrices de expresión génica, escalar datos, seleccionar genes y generar un heatmap con clustering jerárquico interactivo.",
-      note: ""
+      grade: "PROYECTO PROFESIONAL · BIOINFORMÁTICA",
+      description: "Aplicación desarrollada en un entorno profesional de investigación biomédica para explorar datos de expresión génica.",
+      note: "Permite cargar matrices de expresión, escalar datos, seleccionar genes y generar mapas de calor interactivos mediante clustering jerárquico, facilitando la exploración y visualización de patrones en los datos."
     }
   },
   en: {
     permisos: {
       title: "Work Leave Manager",
-      grade: "Initial grade: 8 / 10",
-      description: "Web app for managing leave requests, holidays, and team availability. It is the most product-oriented project: roles, admin panel, calendar, and an interface designed for real use.",
-      note: "After delivery I expanded it so it can be usable for any company."
+      grade: "FINAL DAW PROJECT",
+      description: "Full-Stack application for centralizing leave, holiday, and workplace request management within a company. It includes authentication, different user roles, an admin panel, a calendar, and request status tracking.",
+      note: "I developed both the frontend and backend, using Angular and TypeScript for the interface and Node.js, Express, and MongoDB for the API and data persistence, as well as Docker to simplify running and deploying the environment.",
+      context: "The project began as my final DAW assignment. After delivery, I continued developing and expanding it into a solution adaptable to different companies."
     },
     onepiece: {
       title: "One Piece",
-      grade: "Grade: 9.50 / 10",
-      description: "Full CRUD built with React, Vite, Router, Context API, and json-server. It lets users view, create, edit, delete, and reserve characters with a strong visual style.",
-      note: "The missing half point was for the written report, not for the application itself."
+      grade: "FRONTEND · REACT",
+      description: "CRUD application built with React and Vite for managing One Piece characters. Users can browse, create, edit, delete, and reserve characters through an interface inspired by the series.",
+      note: "The project uses React Router for navigation, Context API for state management, and json-server as the development API."
     },
     flota: {
       title: "Battleship",
-      grade: "Grade: 9.60 / 10",
-      description: "Complete game with a FastAPI backend and HTML, CSS, and JavaScript frontend. It includes board generation, difficulty, shots, score, timer, and match statistics.",
-      note: "Training project shown with a real screenshot of the frontend running."
+      grade: "FULL-STACK · PYTHON / FASTAPI",
+      description: "Complete web game built with a Python and FastAPI backend and an HTML, CSS, and JavaScript frontend.",
+      note: "It implements dynamic board generation, multiple difficulty levels, a shooting system, scoring, a timer, and game statistics, integrating the game logic with an API developed specifically for the application."
     },
     videojuegos: {
       title: "Video Game Catalog",
-      grade: "Grade: 10 / 10",
-      description: "Interactive catalog inspired by Metacritic for browsing video games, scores, platforms, and descriptions. The interface is designed for quick mobile reading.",
-      note: "Project graded with the maximum score."
+      grade: "MOBILE · REACT NATIVE",
+      description: "Mobile application inspired by Metacritic for browsing a catalog of video games, scores, platforms, and descriptions.",
+      note: "Built with React Native and Expo, with an interface designed specifically for mobile devices and focused on making the catalog easy to browse and navigate."
     },
     heatmap: {
       title: "Cluster Heatmap App",
-      grade: "Company project",
-      description: "Bioinformatics app for loading gene expression matrices, scaling data, selecting genes, and generating a heatmap with interactive hierarchical clustering.",
-      note: ""
+      grade: "PROFESSIONAL PROJECT · BIOINFORMATICS",
+      description: "Application developed in a professional biomedical research environment to explore gene expression data.",
+      note: "It supports loading expression matrices, scaling data, selecting genes, and generating interactive heatmaps through hierarchical clustering, making it easier to explore and visualize patterns in the data."
     }
   },
   ca: {
     permisos: {
       title: "Gestor de permisos laborals",
-      grade: "Nota inicial: 8 / 10",
-      description: "Aplicació web per gestionar permisos, vacances i disponibilitat de l'equip. És el projecte més orientat a producte: rols, panell administratiu, calendari i una interfície pensada per a ús real.",
-      note: "Després del lliurament el vaig ampliar perquè sigui utilitzable per qualsevol empresa."
+      grade: "PROJECTE FINAL DAW",
+      description: "Aplicació Full-Stack per centralitzar la gestió de permisos, vacances i sol·licituds laborals dins d'una empresa. Inclou autenticació, diferents rols d'usuari, panell administratiu, calendari i seguiment de l'estat de les sol·licituds.",
+      note: "Vaig desenvolupar tant el frontend com el backend, utilitzant Angular i TypeScript per a la interfície i Node.js, Express i MongoDB per a l'API i la persistència de dades, a més de Docker per facilitar l'execució i el desplegament de l'entorn.",
+      context: "El projecte va néixer com a treball final de DAW i, després del lliurament, vaig continuar desenvolupant-lo i ampliant-lo per convertir-lo en una solució adaptable a diferents empreses."
     },
     onepiece: {
       title: "One Piece",
-      grade: "Nota: 9,50 / 10",
-      description: "CRUD complet fet amb React, Vite, Router, Context API i json-server. Permet consultar, crear, modificar, eliminar i reservar personatges amb una estètica molt marcada.",
-      note: "El mig punt que faltava va ser per la memòria, no pel funcionament de l'aplicació."
+      grade: "FRONTEND · REACT",
+      description: "Aplicació CRUD desenvolupada amb React i Vite per gestionar personatges de One Piece. Permet consultar, crear, editar, eliminar i reservar personatges mitjançant una interfície inspirada en l'univers de la sèrie.",
+      note: "El projecte utilitza React Router per a la navegació, Context API per a la gestió de l'estat i json-server com a API durant el desenvolupament."
     },
     flota: {
       title: "Enfonsar la Flota",
-      grade: "Nota: 9,60 / 10",
-      description: "Joc complet amb backend FastAPI i frontend HTML, CSS i JavaScript. Inclou generació de tauler, dificultat, trets, puntuació, temporitzador i estadístiques de partida.",
-      note: "Projecte formatiu amb captura real del frontend funcionant."
+      grade: "FULL-STACK · PYTHON / FASTAPI",
+      description: "Joc web complet desenvolupat amb backend en Python i FastAPI i frontend en HTML, CSS i JavaScript.",
+      note: "Implementa generació dinàmica del tauler, diferents nivells de dificultat, sistema de trets, puntuació, temporitzador i estadístiques de partida, integrant la lògica del joc amb una API desenvolupada específicament per a l'aplicació."
     },
     videojuegos: {
       title: "Catàleg Videojocs",
-      grade: "Nota: 10 / 10",
-      description: "Catàleg interactiu inspirat en Metacritic per consultar videojocs, puntuacions, plataformes i descripcions. La interfície està pensada per a lectura ràpida en mòbil.",
-      note: "Projecte qualificat amb la nota màxima."
+      grade: "MOBILE · REACT NATIVE",
+      description: "Aplicació mòbil inspirada en Metacritic per consultar un catàleg de videojocs, puntuacions, plataformes i descripcions.",
+      note: "Desenvolupada amb React Native i Expo, amb una interfície dissenyada específicament per a dispositius mòbils i enfocada a facilitar la consulta i navegació del catàleg."
     },
     heatmap: {
       title: "Cluster Heatmap App",
-      grade: "Projecte per a empresa",
-      description: "Aplicació bioinformàtica per carregar matrius d'expressió gènica, escalar dades, seleccionar gens i generar un heatmap amb clustering jeràrquic interactiu.",
-      note: ""
+      grade: "PROJECTE PROFESSIONAL · BIOINFORMÀTICA",
+      description: "Aplicació desenvolupada en un entorn professional de recerca biomèdica per explorar dades d'expressió gènica.",
+      note: "Permet carregar matrius d'expressió, escalar dades, seleccionar gens i generar mapes de calor interactius mitjançant clustering jeràrquic, facilitant l'exploració i visualització de patrons en les dades."
     }
   }
 }
@@ -151,8 +155,17 @@ const setDeviceButton = (mobile) => {
 };
 
 const renderSkills = () => {
-  document.querySelector("[data-skills-list]").innerHTML = skills.map(([icon, label]) => (
-    `<span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}" alt="">${label}</span>`
+  const skillByName = Object.fromEntries(skills.map(([icon, label]) => [label, icon]));
+  const groups = [
+    ["skillsLanguages", ["Python", "TypeScript", "JavaScript", "Java", "PHP", "SQL", "R"]],
+    ["skillsFrontend", ["Angular", "React", "Next.js", "React Native", "HTML", "CSS", "SCSS", "Vite"]],
+    ["skillsBackend", ["Node.js", "NestJS", "FastAPI", "GraphQL", "Swagger/OpenAPI"]],
+    ["skillsDatabases", ["PostgreSQL", "MongoDB", "Firestore"]],
+    ["skillsDevops", ["Docker", "Git", "GitHub", "Slack", "Linux", "Shell", "AWS", "Playwright"]],
+    ["skillsData", ["Machine Learning", "Shiny"]]
+  ];
+  document.querySelector("[data-skills-list]").innerHTML = groups.map(([title, labels]) => (
+    `<section class="skill-group"><h3>${copy[getLang()][title]}</h3><div class="skill-cloud">${labels.map((label) => `<span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skillByName[label]}" alt="">${label}</span>`).join("")}</div></section>`
   )).join("");
 };
 
@@ -162,6 +175,7 @@ const setLang = (lang) => {
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     node.textContent = copy[lang][node.dataset.i18n];
   });
+  renderSkills();
 };
 
 const showToast = (message) => {
@@ -220,10 +234,12 @@ const openEducationDialog = (key) => {
   dialog.querySelector("[data-education-center]").textContent = data.center;
   dialog.querySelector("[data-education-description]").textContent = data.description;
   dialog.querySelector("[data-education-duration]").textContent = data.duration;
+  dialog.querySelector("[data-education-duration-label]").textContent = data.durationLabel || copy[getLang()].educationDurationLabel;
   dialog.querySelector("[data-education-mode]").textContent = data.mode;
+  dialog.querySelector("[data-education-mode-label]").textContent = data.modeLabel || copy[getLang()].educationModeLabel;
   dialog.querySelector("[data-education-tags]").textContent = data.tags;
   const courses = dialog.querySelector("[data-education-courses]");
-  courses.innerHTML = data.courses ? data.courses.map(([title, hours, status]) => `<article><strong>${title}</strong><span>${hours}</span><small>${status}</small></article>`).join("") : "";
+  courses.innerHTML = data.courses ? data.courses.map(([title, hours, status, certificate]) => `<article><strong>${title}</strong><span>${hours}</span><small>${status}</small>${certificate ? `<a class="course-certificate" href="${certificate}" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6V2Zm8 1.8V8h4.2L14 3.8ZM8 4v16h10V10h-6V4H8Zm2 8h6v2h-6v-2Zm0 4h6v2h-6v-2Z"/></svg><span>PDF · ${copy[getLang()].certificateLink} ↗</span></a>` : ""}</article>`).join("") : "";
   openDialog(dialog);
 };
 
@@ -245,6 +261,8 @@ const openProjectDialog = (key) => {
   dialog.querySelector("[data-project-description]").textContent = data.description;
   dialog.querySelector("[data-project-note]").textContent = data.note;
   dialog.querySelector("[data-project-note]").hidden = !data.note;
+  dialog.querySelector("[data-project-context]").textContent = data.context || "";
+  dialog.querySelector("[data-project-context]").hidden = !data.context;
   openDialog(dialog);
 };
 
@@ -259,6 +277,11 @@ document.querySelectorAll("[data-project]").forEach((card) => {
     event.preventDefault();
     openProjectDialog(card.dataset.project);
   });
+});
+
+document.querySelector("[data-copy-discord]").addEventListener("click", async () => {
+  await navigator.clipboard.writeText(discord);
+  showToast(copy[getLang()].discordCopied);
 });
 
 document.querySelector("[data-search-toggle]").addEventListener("click", () => {
