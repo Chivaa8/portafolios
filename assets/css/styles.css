@@ -28,7 +28,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 72px;
+  scroll-padding-top: 10px;
 }
 
 body {
@@ -135,13 +135,13 @@ nav {
 .page-shell {
   margin: 0 auto;
   max-width: 1040px;
-  padding: 52px 20px 96px;
+  padding: 52px 20px 44px;
   transition: max-width 180ms ease, box-shadow 180ms ease;
 }
 
 .section,
 #inicio {
-  scroll-margin-top: 72px;
+  scroll-margin-top: 10px;
 }
 
 :root[data-device="mobile"] .page-shell {

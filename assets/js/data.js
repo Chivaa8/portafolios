@@ -3,6 +3,7 @@ window.portfolioData = {
     es: {
       navProjects: "Proyectos",
       navExperience: "Experiencia",
+      navEducation: "Educación",
       navContact: "Contacto",
       role: "FULL-STACK DEVELOPER",
       lead: "Desarrollador Full-Stack especializado en TypeScript, Angular, Node.js y Python, con experiencia desarrollando aplicaciones web completas, desde interfaces y lógica de negocio hasta APIs REST, bases de datos y arquitectura backend.",
@@ -67,6 +68,7 @@ window.portfolioData = {
     en: {
       navProjects: "Projects",
       navExperience: "Experience",
+      navEducation: "Education",
       navContact: "Contact",
       role: "FULL-STACK DEVELOPER",
       lead: "Full-Stack Developer specializing in TypeScript, Angular, Node.js, and Python, with experience building complete web applications, from interfaces and business logic to REST APIs, databases, and backend architecture.",
@@ -249,6 +251,7 @@ window.portfolioData.copy.ca = {
   ...window.portfolioData.copy.es,
   navProjects: "Projectes",
   navExperience: "Experiència",
+  navEducation: "Educació",
   navContact: "Contacte",
   role: "FULL-STACK DEVELOPER",
   lead: "Desenvolupador Full-Stack especialitzat en TypeScript, Angular, Node.js i Python, amb experiència desenvolupant aplicacions web completes, des d'interfícies i lògica de negoci fins a APIs REST, bases de dades i arquitectura backend.",
