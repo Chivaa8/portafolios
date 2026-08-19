@@ -159,7 +159,7 @@ const renderSkills = () => {
   const groups = [
     ["skillsLanguages", ["Python", "TypeScript", "JavaScript", "Java", "PHP", "SQL", "R"]],
     ["skillsFrontend", ["Angular", "React", "Next.js", "React Native", "HTML", "CSS", "SCSS", "Vite"]],
-    ["skillsBackend", ["Node.js", "NestJS", "FastAPI", "GraphQL", "Swagger/OpenAPI"]],
+    ["skillsBackend", ["Node.js", "NestJS", "FastAPI", "GraphQL", "Swagger/OpenAPI", "JSON"]],
     ["skillsDatabases", ["PostgreSQL", "MongoDB", "Firestore"]],
     ["skillsDevops", ["Docker", "Git", "GitHub", "Slack", "Linux", "Shell", "AWS", "Playwright"]],
     ["skillsData", ["Machine Learning", "Shiny"]]

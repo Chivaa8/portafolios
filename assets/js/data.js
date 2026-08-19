@@ -243,6 +243,7 @@ window.portfolioData = {
     ["firebase/firebase-plain.svg", "Firestore"],
     ["nestjs/nestjs-original.svg", "NestJS"],
     ["xml/xml-original.svg", "XML"],
+    ["json/json-original.svg", "JSON"],
     ["tensorflow/tensorflow-original.svg", "Machine Learning"]
   ]
 };
