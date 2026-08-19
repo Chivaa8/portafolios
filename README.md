@@ -4,7 +4,7 @@ Portfolio personal estático para presentar perfil técnico, experiencia, formac
 
 ## Enlaces
 
-- LinkedIn: https://www.linkedin.com/in/oriol-chiva-hidalgo/
+- LinkedIn: https://www.linkedin.com/in/oriol-chiva/
 - GitHub: https://github.com/Chivaa8
 
 ## Demo local
