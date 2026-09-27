@@ -809,6 +809,10 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .education-card > strong {
+    grid-row: 1;
+  }
+
   .education-track::before {
     display: none;
   }
