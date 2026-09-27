@@ -809,8 +809,18 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .education-card {
+    grid-template-columns: 42px minmax(0, 1fr);
+    align-items: center;
+  }
+
   .education-card > strong {
-    grid-row: 1;
+    grid-area: 1 / 2;
+    align-self: center;
+  }
+
+  .education-card > div {
+    grid-column: 1 / -1;
   }
 
   .education-track::before {
