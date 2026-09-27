@@ -239,7 +239,7 @@ const openEducationDialog = (key) => {
   dialog.querySelector("[data-education-mode-label]").textContent = data.modeLabel || copy[getLang()].educationModeLabel;
   dialog.querySelector("[data-education-tags]").textContent = data.tags;
   const courses = dialog.querySelector("[data-education-courses]");
-  courses.innerHTML = data.courses ? data.courses.map(([title, hours, status, certificate]) => `<article><strong>${title}</strong><span>${hours}</span><small>${status}</small>${certificate ? `<a class="course-certificate" href="${certificate}" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6V2Zm8 1.8V8h4.2L14 3.8ZM8 4v16h10V10h-6V4H8Zm2 8h6v2h-6v-2Zm0 4h6v2h-6v-2Z"/></svg><span>PDF · ${copy[getLang()].certificateLink} ↗</span></a>` : ""}</article>`).join("") : "";
+  courses.innerHTML = data.courses ? data.courses.map(([title, hours, status, certificate]) => `<article><strong>${title}</strong><span>${hours}</span><small>${status}</small>${certificate ? `<a class="course-certificate" href="${certificate}" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6V2Zm8 1.8V8h4.2L14 3.8ZM8 4v16h10V10h-6V4H8Zm2 8h6v2h-6v-2Zm0 4h6v2h-6v-2Z"/></svg><span>${copy[getLang()].certificateLink} ↗</span></a>` : ""}</article>`).join("") : "";
   openDialog(dialog);
 };
 
