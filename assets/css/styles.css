@@ -1158,3 +1158,42 @@ h3 {
     transform: translateY(-135%);
   }
 }
+
+/* New recommendation content follows the original portfolio palette and cards. */
+.recommendation-card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:28px;display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:28px}
+.reference-company{color:var(--accent);font-weight:900;letter-spacing:.12em}
+.recommendation-card blockquote{margin:20px 0;border-left:3px solid var(--accent-2);padding-left:20px;font-size:1.3rem;line-height:1.5}
+.reference-author{font-weight:800;margin-bottom:4px}
+.reference-actions{display:flex;flex-direction:column;justify-content:center;gap:14px}
+.reference-actions a{border:1px solid var(--line);border-radius:999px;padding:10px 16px;text-align:center}
+.reference-actions .primary-cta{color:var(--accent-2);border-color:var(--accent-2)}
+.text-link{color:var(--accent-2)}
+.product-stack{margin:16px 0;color:var(--muted)}
+.product-stack summary{cursor:pointer;color:var(--text)}
+.experience-context,.skills-context{color:var(--muted)}
+.skip-link{position:fixed;top:-100px;left:20px;z-index:100;background:var(--paper);padding:12px 18px}
+.skip-link:focus{top:12px}
+:focus-visible{outline:2px solid var(--accent-2);outline-offset:4px}
+@media(max-width:760px){.recommendation-card{grid-template-columns:1fr;padding:20px}.reference-actions{align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+.hero-name{font-size:clamp(2.4rem,5vw,3.6rem);line-height:1.1;margin-bottom:14px;letter-spacing:-.035em}
+.hero-role{font-size:clamp(1rem,2vw,1.2rem);line-height:1.6;font-weight:700;color:var(--accent);margin-bottom:20px}
+
+.booka-photo::after{display:none}.booka-photo span{display:none}.resume-item .booka-photo img.company-logo{aspect-ratio:1;background:white;padding:24px;object-fit:contain}.ai-focus{color:var(--muted);font-size:.95rem}
+
+.booka-details-button{margin-top:18px;border:1px solid var(--accent-2);border-radius:999px;padding:10px 16px;color:var(--accent-2)}.booka-details-button:hover{background:var(--soft)}.booka-dialog{max-height:85vh;overflow:auto}.booka-dialog ul{color:var(--muted);padding-left:22px}.booka-dialog .tags{margin:16px 0}
+
+.booka-card{cursor:pointer}.booka-letter-link{margin-top:12px}.booka-letter-link a{display:inline-block;padding:6px 0}
+
+.booka-stack-box{margin-top:20px;padding:14px;border:1px solid var(--line);border-radius:8px;background:var(--soft)}.booka-stack-box .tags{margin:0}
+.tags.booka-stack-box{margin:20px 0 0;padding:0;border:0;border-radius:0;background:none}
+.booka-card .experience-context{margin-top:16px}.reference-actions a{display:flex;align-items:center;justify-content:center;gap:8px}.reference-actions svg{fill:currentColor;width:20px;height:20px;flex-shrink:0}
+
+/* Recommendation emphasis uses the existing palette. */
+.recommendation-card{border-top:4px solid var(--accent-2);box-shadow:0 12px 36px rgb(0 0 0 / 7%);background:linear-gradient(135deg,var(--paper),var(--soft));gap:36px;padding:32px}
+.recommendation-card [data-i18n="referenceIntro"]{font-weight:700;color:var(--accent-2);margin-top:12px}
+.recommendation-card blockquote{font-size:clamp(1.3rem,2.6vw,1.75rem);font-weight:650;line-height:1.5}
+.reference-actions .primary-cta{background:var(--accent-2);color:var(--paper);font-weight:750;min-height:52px}
+.reference-actions .primary-cta:hover{background:var(--text);border-color:var(--text);color:var(--bg)}
+@media(max-width:760px){.recommendation-card{padding:22px;gap:22px}.reference-actions{align-items:stretch}.reference-actions a{width:100%}.hero-links .mobility-line{flex-wrap:wrap;gap:12px}.site-header nav{gap:10px}.site-header .brand{white-space:nowrap}}

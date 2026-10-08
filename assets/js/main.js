@@ -1,4 +1,4 @@
-﻿const { copy, educationDetails, skills } = window.portfolioData;
+const { copy, educationDetails, skills } = window.portfolioData;
 const email = ["oriolchiva8", "gmail.com"].join("@");
 const discord = "chiva8";
 const getLang = () => ["en", "ca"].includes(document.documentElement.lang) ? document.documentElement.lang : "es";
@@ -147,25 +147,19 @@ const setThemeButton = (dark) => {
   button.title = dark ? "Tema claro" : "Tema oscuro";
 };
 
-const setDeviceButton = (mobile) => {
-  const button = document.querySelector("[data-device-toggle]");
-  button.innerHTML = mobile ? icons.monitor : icons.phone;
-  button.setAttribute("aria-label", mobile ? "Vista escritorio" : "Vista movil");
-  button.title = mobile ? "Vista escritorio" : "Vista movil";
-};
 
 const renderSkills = () => {
   const skillByName = Object.fromEntries(skills.map(([icon, label]) => [label, icon]));
   const groups = [
     ["skillsLanguages", ["Python", "TypeScript", "JavaScript", "Java", "PHP", "SQL", "R"]],
-    ["skillsFrontend", ["Angular", "React", "Next.js", "React Native", "HTML", "CSS", "SCSS", "Vite"]],
-    ["skillsBackend", ["Node.js", "NestJS", "FastAPI", "GraphQL", "Swagger/OpenAPI", "JSON"]],
-    ["skillsDatabases", ["PostgreSQL", "MongoDB", "Firestore"]],
-    ["skillsDevops", ["Docker", "Git", "GitHub", "Slack", "Linux", "Shell", "AWS", "Playwright"]],
-    ["skillsData", ["Machine Learning", "Shiny"]]
+    ["skillsFrontend", ["Angular", "React", "Next.js", "React Native", "HTML", "CSS", "SCSS", "Vite", "Tailwind CSS", "i18n / RTL"]],
+    ["skillsBackend", ["Node.js", "NestJS", "FastAPI", "GraphQL", "Swagger/OpenAPI", "JSON", "API Next.js", "Firebase Authentication", "Stripe"]],
+    ["skillsDatabases", ["PostgreSQL", "MongoDB", "Firestore", "Neon", "Drizzle ORM"]],
+    ["skillsDevops", ["Docker", "Git", "GitHub", "Slack", "Linux", "Shell", "AWS", "Playwright", "Vercel"]],
+    ["skillsData", ["Machine Learning", "Shiny", "Validación documental con IA"]]
   ];
   document.querySelector("[data-skills-list]").innerHTML = groups.map(([title, labels]) => (
-    `<section class="skill-group"><h3>${copy[getLang()][title]}</h3><div class="skill-cloud">${labels.map((label) => `<span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skillByName[label]}" alt="">${label}</span>`).join("")}</div></section>`
+    `<section class="skill-group"><h3>${copy[getLang()][title]}</h3><div class="skill-cloud">${labels.map((label) => `<span>${skillByName[label] ? `<img src="${skillByName[label].startsWith("@") ? `assets/img/skills/${skillByName[label].slice(1)}.svg` : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skillByName[label]}`}" alt="" loading="lazy">` : ""}${label}</span>`).join("")}</div></section>`
   )).join("");
 };
 
@@ -176,6 +170,8 @@ const setLang = (lang) => {
     node.textContent = copy[lang][node.dataset.i18n];
   });
   renderSkills();
+  document.querySelectorAll("[data-booka-dialog] .tags").forEach(node => { delete node.dataset.rendered; });
+  renderTags();
 };
 
 const showToast = (message) => {
@@ -194,6 +190,17 @@ const openDialog = (dialog) => {
   dialog.setAttribute("open", "");
   dialog.classList.add("dialog-fallback");
 };
+const bookaCard = document.querySelector("[data-booka-card]");
+bookaCard.addEventListener("click", (event) => {
+  if (event.target.closest("a")) return;
+  openDialog(document.querySelector("[data-booka-dialog]"));
+});
+bookaCard.addEventListener("keydown", (event) => {
+  if (event.target !== bookaCard || !["Enter", " "].includes(event.key)) return;
+  event.preventDefault();
+  openDialog(document.querySelector("[data-booka-dialog]"));
+});
+
 document.querySelector("[data-lang-toggle]").addEventListener("click", () => {
   setLang(({ es: "en", en: "ca", ca: "es" })[getLang()]);
 });
@@ -212,16 +219,10 @@ window.addEventListener("scroll", () => {
 }, { passive: true });
 updateHeader();
 
-document.querySelector("[data-device-toggle]").addEventListener("click", () => {
-  const root = document.documentElement;
-  const mobile = root.dataset.device !== "mobile";
-  root.dataset.device = mobile ? "mobile" : "desktop";
-  setDeviceButton(mobile);
-});
 
 document.querySelectorAll("[data-copy-email]").forEach((button) => {
   button.addEventListener("click", async () => {
-    await navigator.clipboard.writeText(email);
+    try { await navigator.clipboard.writeText(email); } catch { window.location.href = `mailto:${email}`; return; }
     showToast(copy[getLang()].copied);
   });
 });
@@ -280,7 +281,7 @@ document.querySelectorAll("[data-project]").forEach((card) => {
 });
 
 document.querySelector("[data-copy-discord]").addEventListener("click", async () => {
-  await navigator.clipboard.writeText(discord);
+  try { await navigator.clipboard.writeText(discord); } catch { showToast("Discord: chiva8"); return; }
   showToast(copy[getLang()].discordCopied);
 });
 
@@ -288,22 +289,6 @@ document.querySelector("[data-search-toggle]").addEventListener("click", () => {
   const dialog = document.querySelector("[data-search-dialog]");
   openDialog(dialog);
   dialog.querySelector("input").focus();
-});
-
-document.querySelectorAll("[data-download-cv]").forEach((link) => {
-  link.addEventListener("click", async (event) => {
-    if (location.protocol === "file:") return;
-    event.preventDefault();
-    const response = await fetch(link.href);
-    const blobUrl = URL.createObjectURL(await response.blob());
-    const download = document.createElement("a");
-    download.href = blobUrl;
-    download.download = link.download;
-    document.body.append(download);
-    download.click();
-    download.remove();
-    URL.revokeObjectURL(blobUrl);
-  });
 });
 
 const searchInput = document.querySelector("[data-search-input]");
@@ -323,10 +308,11 @@ searchInput.addEventListener("keydown", (event) => {
   const dialog = document.querySelector("[data-search-dialog]");
   if (dialog.close) dialog.close();
   dialog.removeAttribute("open");
-  card.scrollIntoView({ behavior: "smooth", block: "center" });
+  card.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "center" });
 });
 
 const animateMetric = (node) => {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) { node.textContent = node.dataset.count; return; }
   const target = Number(node.dataset.count);
   const decimals = node.dataset.count.includes(".") ? 2 : 0;
   const start = performance.now();
@@ -358,7 +344,7 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
     entry.target.classList.add("is-visible");
     observer.unobserve(entry.target);
   });
-}, { threshold: 0.14 });
+}, { threshold: 0.01 });
 
 document.querySelectorAll("[data-reveal]").forEach((node) => revealObserver.observe(node));
 
@@ -379,10 +365,7 @@ toTop?.addEventListener("keydown", (event) => {
 });
 
 document.querySelector("[data-search-toggle]").innerHTML = icons.search;
+setLang(getLang());
 renderSkills();
 renderTags();
 setThemeButton(document.documentElement.dataset.theme === "dark");
-setDeviceButton(document.documentElement.dataset.device === "mobile");
-
-
-
