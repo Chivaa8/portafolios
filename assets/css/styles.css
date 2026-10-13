@@ -406,6 +406,9 @@ h3 {
 .work-photo {
   display: block;
   position: relative;
+  align-self: start;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .work-photo::after {
