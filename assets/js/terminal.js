@@ -48,7 +48,17 @@ function localizedCommands(language) {
     const c = data.copy[language];
     result.formacion = Object.values(data.educationDetails[language]).map(item => `${item.title}\n${item.center} · ${item.period}\n${item.description}`).join('\n\n') + '\n\n' + ui.languages;
     result.proyectos = [ui.nav[5].toUpperCase(), c.repoPermisos,c.repoHeatmap,c.repoFlota,c.repoOnePiece,c.repoCatalogo].join('\n\n');
-    result.experiencia = result.experiencia.replace('{it}',[c.itPoint1,c.itPoint2,c.itPoint3].join(' ')).replace('{booka}',[c.profilesPoint1,c.profilesPoint2,c.profilesPoint3].join('\n'));
+    const dates = {
+      es: ['Enero - abril de 2023', 'Septiembre de 2025 - actualidad', '6 - 23 de octubre de 2025 · 58,5 horas', 'Abril de 2020 - actualidad', 'Prácticas en bioinformática', 'Mozo de almacén', 'Procesos logísticos y control de calidad.'],
+      ca: ['Gener - abril de 2023', 'Setembre de 2025 - actualitat', '6 - 23 d’octubre de 2025 · 58,5 hores', 'Abril de 2020 - actualitat', 'Pràctiques en bioinformàtica', 'Mosso de magatzem', 'Processos logístics i control de qualitat.'],
+      en: ['January - April 2023', 'September 2025 - present', '6 - 23 October 2025 · 58.5 hours', 'April 2020 - present', 'Bioinformatics internship', 'Warehouse associate', 'Logistics processes and quality control.']
+    }[language];
+    result.experiencia = [
+      'KYMOS / Kymos Group · IT Support', dates[0], c.itPoint1, c.itPoint2, c.itPoint3, '',
+      'BOOKA / 6Profiles Consulting S.L.', dates[1], c.bookaContribution, c.profilesPoint1, c.profilesPoint2, c.profilesPoint3, '',
+      'IGTP · ' + dates[4], dates[2], c.bioPoint1, c.bioPoint2, c.bioPoint3, '',
+      'AMAZON · ' + dates[5], dates[3], dates[6]
+    ].join('\n');
   }
   result.help = ['whoami','experiencia','skills','diagnostico','formacion','proyectos','referencias','contacto','help'].map((key,i)=>`${key.padEnd(13)}${ui.nav[i]}`).join('\n') + `\ncv           ${ui.download}\nclear        ${language === 'ca' ? 'Netejar pantalla' : language === 'en' ? 'Clear screen' : 'Limpiar pantalla'}\n\nls · cat cv · pwd`;
   result.cv = 'CV · Oriol Chiva';

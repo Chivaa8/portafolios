@@ -261,7 +261,7 @@ const openProjectDialog = (key) => {
   const dialog = document.querySelector("[data-project-dialog]");
   dialog.querySelector("[data-project-title]").textContent = data.title;
   dialog.querySelector("[data-project-grade]").textContent = data.grade;
-  dialog.querySelector("[data-project-description]").textContent = data.description;
+  dialog.querySelector("[data-project-description]").textContent = key === "heatmap" ? copy[getLang()].repoHeatmap : data.description;
   dialog.querySelector("[data-project-note]").textContent = data.note;
   dialog.querySelector("[data-project-note]").hidden = !data.note;
   dialog.querySelector("[data-project-context]").textContent = data.context || "";

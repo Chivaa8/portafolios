@@ -54,3 +54,10 @@ const homeCopy = require('./assets/js/home-language.js');
 for (const language of ['es','ca','en']) assert.equal(homeCopy[language].length,10);
 assert(fs.readFileSync(path.join(__dirname,'index.html'),'utf8').includes('id="home-language"'));
 console.log('PASS: translated home screen and language selector.');
+
+for (const language of ['es','ca','en']) {
+ const c = context.window.portfolioData.copy[language];
+ const experience = context.module.exports.localizedCommands(language).experiencia;
+ for (const key of ['bookaContribution','itPoint2','bioPoint1','bioPoint3']) assert(experience.includes(c[key]), `${language}: contribution ${key}`);
+}
+console.log('PASS: concrete contributions shared across both portfolio views in all three languages.');
