@@ -378,11 +378,35 @@ document.querySelectorAll('[data-work-case]').forEach(button => button.addEventL
   const cases = window.portfolioData.workCases[getLang()];
   const item = cases[button.dataset.workCase];
   const dialog = document.querySelector('[data-work-case-dialog]');
+  const caseMeta = {
+    bio: ['IGTP', ['R', 'Shiny', 'Linux', 'Heatmaps', 'Volcano Plot'], 'assets/docs/carta-recomendacion-oriol.pdf'],
+    it: ['KYMOS', ['Soporte IT', 'Tickets', 'Documentación', 'WDS'], 'assets/docs/carta-recomendacion.pdf'],
+    booka: ['BOOKA', ['Next.js', 'React', 'TypeScript', 'Git'], 'assets/docs/Carta_Recomendacion_Oriol_Chiva.pdf']
+  }[button.dataset.workCase];
+  const labels = {
+    es: ['EXPERIENCIA EN DETALLE', 'RESPALDO PROFESIONAL', 'Consultar recomendación', 'Tecnologías'],
+    ca: ['EXPERIÈNCIA EN DETALL', 'AVAL PROFESSIONAL', 'Consultar recomanació', 'Tecnologies'],
+    en: ['EXPERIENCE IN DETAIL', 'PROFESSIONAL REFERENCE', 'Read recommendation', 'Technologies']
+  }[getLang()];
   dialog.querySelector('h2').textContent = item.title;
+  dialog.querySelector('[data-case-eyebrow]').textContent = labels[0];
+  dialog.querySelector('[data-case-company]').textContent = caseMeta[0];
+  const tools = dialog.querySelector('[data-case-tools]');
+  tools.replaceChildren(); tools.setAttribute('aria-label', labels[3]);
+  const toolTranslations = {ca: {'Soporte IT':'Suport IT', 'Tickets':'Tiquets', 'Documentación':'Documentació'}, en: {'Soporte IT':'IT Support', 'Tickets':'Tickets', 'Documentación':'Documentation'}};
+  caseMeta[1].forEach(tool => {
+    const chip = document.createElement('span');
+    chip.textContent = toolTranslations[getLang()]?.[tool] || tool;
+    tools.append(chip);
+  });
+  dialog.querySelector('[data-case-reference-label]').textContent = labels[1];
+  const reference = dialog.querySelector('[data-case-reference]');
+  reference.textContent = labels[2]; reference.href = caseMeta[2];
   for (const key of ['problem', 'solution', 'approach']) {
     dialog.querySelector(`[data-case-heading="${key}"]`).textContent = cases[key];
     dialog.querySelector(`[data-case-text="${key}"]`).textContent = item[key];
   }
   dialog.querySelector('.dialog-close').setAttribute('aria-label', {es:'Cerrar',ca:'Tancar',en:'Close'}[getLang()]);
   openDialog(dialog);
+  dialog.scrollTop = 0;
 }));

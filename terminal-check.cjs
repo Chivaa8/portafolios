@@ -76,3 +76,8 @@ for (const key of ['booka','bio','it']) {
 assert.equal((classicHtml.match(/class="work-case-actions"/g)||[]).length,3);
 assert.equal((classicHtml.match(/class="work-case-icon"/g)||[]).length,3);
 console.log('PASS: three separate action rows and accessible illustrated buttons.');
+
+assert(!classicHtml.includes('class="work-case-arrow"'));
+assert.equal((classicHtml.match(/class="case-block/g)||[]).length,3);
+assert(classicHtml.includes('data-case-reference'));
+console.log('PASS: no button arrow, three story blocks and original recommendation access.');
