@@ -1319,3 +1319,15 @@ h3 {
 +  line-height: 1.35;
 +}
 +.resume-item .booka-photo img.company-logo { padding-bottom: 54px; }
+
+.booka-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin-top: 18px;
+}
+.booka-actions .booka-details-button,
+.booka-actions .booka-letter-link { margin-top: 0; }
+.booka-actions .booka-details-button { flex: 0 0 auto; }
+.booka-actions .booka-letter-link { min-width: 0; }
