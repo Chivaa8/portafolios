@@ -49,3 +49,8 @@ const hash = file => crypto.createHash('sha256').update(fs.readFileSync(file)).d
 assert.equal(hash(path.join(__dirname,'assets/docs/CV-Oriol-Chiva.pdf')),hash('C:/Users/Chiva/Dropbox/PC/Desktop/Mas cosas/CV/CV.pdf'));
 assert(!terminalHtml.includes('CV-Help-Desk.pdf'));
 console.log('PASS: all command responses in ES/CA/EN, translated aliases, shared education and byte-identical original CV.');
+
+const homeCopy = require('./assets/js/home-language.js');
+for (const language of ['es','ca','en']) assert.equal(homeCopy[language].length,10);
+assert(fs.readFileSync(path.join(__dirname,'index.html'),'utf8').includes('id="home-language"'));
+console.log('PASS: translated home screen and language selector.');

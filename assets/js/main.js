@@ -164,6 +164,8 @@ const renderSkills = () => {
 };
 
 const setLang = (lang) => {
+  const terminalLink = document.querySelector('.terminal-launch');
+  if (terminalLink) terminalLink.href = 'terminal.html?lang=' + lang;
   document.documentElement.lang = lang;
   document.querySelector("[data-lang-toggle]").textContent = ({ es: "EN", en: "CA", ca: "ES" })[lang];
   document.querySelectorAll("[data-i18n]").forEach((node) => {
@@ -365,7 +367,8 @@ toTop?.addEventListener("keydown", (event) => {
 });
 
 document.querySelector("[data-search-toggle]").innerHTML = icons.search;
-setLang(getLang());
+const initialLanguage = new URLSearchParams(location.search).get('lang');
+setLang(['es', 'ca', 'en'].includes(initialLanguage) ? initialLanguage : getLang());
 renderSkills();
 renderTags();
 setThemeButton(document.documentElement.dataset.theme === "dark");

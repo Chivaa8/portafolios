@@ -114,11 +114,16 @@ if (typeof document !== 'undefined') {
     }
   });
   const languageSelect = document.querySelector('#terminal-language');
+  const initialLanguage = new URLSearchParams(location.search).get('lang');
+  if (Object.hasOwn(translations, initialLanguage)) lang = initialLanguage;
+  languageSelect.value = lang;
   function applyLanguage() {
     const ui = translations[lang];
     document.documentElement.lang = lang;
     const set = (selector, text) => { document.querySelector(selector).textContent = text; };
     set('header > a:last-of-type', ui.classic);
+    document.querySelector('header > a:last-of-type').href = 'portfolio.html?lang=' + lang;
+    document.querySelector('.brand').href = 'index.html?lang=' + lang;
     set('.eyebrow', ui.eyebrow);
     const title = document.querySelector('h1');
     const accent = document.createElement('span'); accent.textContent = ui.title[1];
