@@ -1331,3 +1331,18 @@ h3 {
 .booka-actions .booka-letter-link { margin-top: 0; }
 .booka-actions .booka-details-button { flex: 0 0 auto; }
 .booka-actions .booka-letter-link { min-width: 0; }
+
+/* Stretch only the logo panel; its row ends with the skills, before the case action. */
+.booka-card { row-gap: 0; }
+.booka-card .booka-photo { align-self: stretch; }
+.booka-card .booka-photo img.company-logo {
+  height: 100%;
+  min-height: 220px;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+.booka-card .booka-case-actions { grid-column: 2; }
+@media (max-width: 820px) {
+  .booka-card .booka-case-actions { grid-column: 1 / -1; }
+}
+:root[data-device="mobile"] .booka-card .booka-case-actions { grid-column: 1 / -1; }
