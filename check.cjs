@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const path = require('node:path');
 const root = __dirname;
-const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+const html = fs.readFileSync(path.join(root, 'portfolio.html'), 'utf8');
 const context = { window: {} };
 vm.runInNewContext(fs.readFileSync(path.join(root, 'assets/js/data.js'), 'utf8'), context);
 for (const [, key] of html.matchAll(/data-i18n="([^"]+)"/g)) {
