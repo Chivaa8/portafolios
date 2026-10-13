@@ -1299,26 +1299,26 @@ h3 {
 }
 
 /* A compact, consistent caption strip for every company image. */
-+.work-photo::after {
-+  inset: auto 0 0;
-+  height: 44px;
-+  border-radius: 0 0 8px 8px;
-+  background: rgb(38 42 44 / 82%);
-+}
-+.work-photo span {
-+  bottom: 0;
-+  left: 0;
-+  right: 0;
-+  min-height: 44px;
-+  display: flex;
-+  align-items: center;
-+  padding: 10px 14px;
-+  color: #fff;
-+  font-size: .9rem;
-+  font-weight: 650;
-+  line-height: 1.35;
-+}
-+.resume-item .booka-photo img.company-logo { padding-bottom: 54px; }
+.work-photo::after {
+  inset: auto 0 0;
+  height: 44px;
+  border-radius: 0 0 8px 8px;
+  background: rgb(38 42 44 / 82%);
+}
+.work-photo span {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  color: #fff;
+  font-size: .9rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+.resume-item .booka-photo img.company-logo { padding-bottom: 54px; }
 
 .booka-actions {
   display: flex;
@@ -1346,3 +1346,13 @@ h3 {
   .booka-card .booka-case-actions { grid-column: 1 / -1; }
 }
 :root[data-device="mobile"] .booka-card .booka-case-actions { grid-column: 1 / -1; }
+
+.header-controls { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+@media(max-width:760px) {
+  .site-header { display: grid; grid-template-columns: 1fr auto; gap: 8px 12px; padding: 10px 16px; }
+  .site-header .brand { grid-column: 1; grid-row: 1; font-size: 1rem; }
+  .header-controls { grid-column: 2; grid-row: 1; gap: 6px; }
+  .header-controls .icon-button, .header-controls .terminal-launch { width: 32px; height: 32px; min-width: 32px; padding: 5px; }
+  .site-header nav { grid-column: 1 / -1; grid-row: 2; display:flex; width:100%; min-width:0; flex-wrap:nowrap; overflow-x:auto; gap:16px; padding:4px 0; }
+  .site-header nav a { flex-shrink:0; white-space:nowrap; font-size:.8rem; }
+}

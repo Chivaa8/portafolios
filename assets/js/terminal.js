@@ -95,7 +95,7 @@ if (typeof document !== 'undefined') {
     for (const [originalLabel, href] of links[name] || []) {
       const ui = translations[lang];
       const label = name === 'cv' ? ui.download : name === 'proyectos' ? ui.projects : originalLabel.replace('Recomendación', ui.recommendation).replace('Certificado', ui.certificate);
-      const link = document.createElement('a'); link.textContent = label + ' ↗'; link.href = href;
+      const link = document.createElement('a'); link.textContent = label + ' ↗'; link.href = name === 'proyectos' ? 'portfolio.html?lang=' + lang + '#proyectos' : href;
       if (!href.startsWith('mailto:')) { link.target = '_blank'; link.rel = 'noreferrer'; }
       result.append(document.createElement('br'), link);
     }

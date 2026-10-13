@@ -143,8 +143,8 @@ const renderTags = () => {
 const setThemeButton = (dark) => {
   const button = document.querySelector("[data-theme-toggle]");
   button.innerHTML = dark ? icons.sun : icons.moon;
-  button.setAttribute("aria-label", dark ? "Tema claro" : "Tema oscuro");
-  button.title = dark ? "Tema claro" : "Tema oscuro";
+  button.setAttribute("aria-label", dark ? window.portfolioData.uiLabels[getLang()].light : window.portfolioData.uiLabels[getLang()].dark);
+  button.title = dark ? window.portfolioData.uiLabels[getLang()].light : window.portfolioData.uiLabels[getLang()].dark;
 };
 
 
@@ -159,7 +159,7 @@ const renderSkills = () => {
     ["skillsData", ["Machine Learning", "Shiny", "Validación documental con IA"]]
   ];
   document.querySelector("[data-skills-list]").innerHTML = groups.map(([title, labels]) => (
-    `<section class="skill-group"><h3>${copy[getLang()][title]}</h3><div class="skill-cloud">${labels.map((label) => `<span>${skillByName[label] ? `<img src="${skillByName[label].startsWith("@") ? `assets/img/skills/${skillByName[label].slice(1)}.svg` : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skillByName[label]}`}" alt="" loading="lazy">` : ""}${label}</span>`).join("")}</div></section>`
+    `<section class="skill-group"><h3>${copy[getLang()][title]}</h3><div class="skill-cloud">${labels.map((label) => `<span>${skillByName[label] ? `<img src="${skillByName[label].startsWith("@") ? `assets/img/skills/${skillByName[label].slice(1)}.svg` : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skillByName[label]}`}" alt="" loading="lazy">` : ""}${window.portfolioData.tagLabels[getLang()][label] || label}</span>`).join("")}</div></section>`
   )).join("");
 };
 
@@ -171,9 +171,44 @@ const setLang = (lang) => {
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     node.textContent = copy[lang][node.dataset.i18n];
   });
+  const ui = window.portfolioData.uiLabels[lang];
+  document.querySelector('[data-search-toggle]').setAttribute('aria-label', ui.search);
+  document.querySelector('[data-search-toggle]').title = ui.search;
+  terminalLink.setAttribute('aria-label',ui.terminal); terminalLink.title = ui.terminal;
+  document.querySelector('[data-booka-card]').setAttribute('aria-label',ui.booka);
+  document.querySelector('.to-top').setAttribute('aria-label',ui.top);
+  document.querySelectorAll('.dialog-close').forEach(button => { button.setAttribute('aria-label',ui.close); if (!button.querySelector('svg')) button.textContent = ui.close; });
+  document.querySelector('nav a[href="#skills"]').textContent = ui.skills;
+  document.querySelector('[data-skills-list]').setAttribute('aria-label',ui.technologies);
+  document.querySelector('.hero-links').setAttribute('aria-label',ui.actions);
+  document.querySelector('[data-search-input]').setAttribute('aria-label',ui.searchInput);
+  document.querySelector('[data-search-input]').placeholder = ui.searchPlaceholder;
+  document.querySelector('.search-dialog label > span').textContent = ui.search;
+  document.querySelectorAll('[data-education-open]').forEach(card => {
+    const item = educationDetails[lang][card.dataset.educationOpen];
+    card.setAttribute('aria-label',ui.details + ' ' + item.title);
+    card.querySelector('h3').textContent = item.title;
+  });
+  document.querySelectorAll('[aria-label]').forEach(node => {
+    const original = node.dataset.originalAria || node.getAttribute('aria-label');
+    if (original.startsWith('Web oficial') || original.endsWith(', web oficial')) {
+      node.dataset.originalAria = original;
+      node.setAttribute('aria-label',lang === 'en' ? original.replace('Web oficial de ','Official website of ').replace('Web oficial ','Official website of ').replace(', web oficial', ', official website') : lang === 'ca' ? original.replace('Web oficial de ','Web oficial de ') : original);
+    }
+  });
+  document.querySelectorAll('.project-thumb img').forEach(img => {
+    const name = img.closest('.project-card').querySelector('h3').textContent;
+    img.alt = ({es:'Vista de ',ca:'Vista de ',en:'Preview of '})[lang] + name;
+  });
   renderSkills();
+  setThemeButton(document.documentElement.dataset.theme === 'dark');
   document.querySelectorAll("[data-booka-dialog] .tags").forEach(node => { delete node.dataset.rendered; });
   renderTags();
+  document.querySelectorAll('.tags span').forEach(span => {
+    const original = span.dataset.originalTag || span.textContent;
+    span.dataset.originalTag = original;
+    span.textContent = window.portfolioData.tagLabels[lang][original] || original;
+  });
 };
 
 const showToast = (message) => {
@@ -304,7 +339,7 @@ searchInput.addEventListener("keydown", (event) => {
     `${project.dataset.search} ${project.textContent}`.toLowerCase().includes(query)
   ));
   if (!card) {
-    showToast("No encontrado");
+    showToast(window.portfolioData.uiLabels[getLang()].notFound);
     return;
   }
   const dialog = document.querySelector("[data-search-dialog]");

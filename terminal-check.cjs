@@ -73,7 +73,7 @@ const classicHtml = fs.readFileSync(path.join(__dirname,'portfolio.html'),'utf8'
 for (const key of ['booka','bio','it']) {
  assert(classicHtml.includes(`data-work-case="${key}"`));
 }
-assert.equal((classicHtml.match(/class="work-case-actions"/g)||[]).length,3);
+assert.equal((classicHtml.match(/class="work-case-actions(?: booka-case-actions)?"/g)||[]).length,3);
 assert.equal((classicHtml.match(/class="work-case-icon"/g)||[]).length,3);
 console.log('PASS: three separate action rows and accessible illustrated buttons.');
 
@@ -81,3 +81,13 @@ assert(!classicHtml.includes('class="work-case-arrow"'));
 assert.equal((classicHtml.match(/class="case-block/g)||[]).length,3);
 assert(classicHtml.includes('data-case-reference'));
 console.log('PASS: no button arrow, three story blocks and original recommendation access.');
+
+const css = fs.readFileSync(path.join(__dirname,'assets/css/styles.css'),'utf8');
+assert(!/^\+/m.test(css),'Stray patch markers in CSS');
+for (const lang of ['es','ca','en']) {
+ assert(context.window.portfolioData.uiLabels[lang].search);
+ assert(context.window.portfolioData.uiLabels[lang].terminal);
+}
+assert(fs.readFileSync(path.join(__dirname,'assets/js/terminal.js'),'utf8').includes("'portfolio.html?lang=' + lang + '#proyectos'"));
+assert(classicHtml.includes('class="header-controls"'));
+console.log('PASS: valid caption CSS, compact toolbar, UI translations and language-preserving project link.');
