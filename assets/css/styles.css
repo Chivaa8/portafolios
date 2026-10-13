@@ -1197,3 +1197,49 @@ h3 {
 .reference-actions .primary-cta{background:var(--accent-2);color:var(--paper);font-weight:750;min-height:52px}
 .reference-actions .primary-cta:hover{background:var(--text);border-color:var(--text);color:var(--bg)}
 @media(max-width:760px){.recommendation-card{padding:22px;gap:22px}.reference-actions{align-items:stretch}.reference-actions a{width:100%}.hero-links .mobility-line{flex-wrap:wrap;gap:12px}.site-header nav{gap:10px}.site-header .brand{white-space:nowrap}}
+
+/* Keep work details in their own row below the wrapping skill tags. */
+.work-case-actions {
+  display: flex;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.work-case-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  padding: 10px 14px 10px 10px;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 8%, var(--paper));
+  color: var(--text);
+  font: inherit;
+  font-size: .9rem;
+  font-weight: 650;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+.work-case-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--accent) 14%, var(--paper));
+  color: var(--accent);
+}
+.work-case-arrow { color: var(--accent); margin-left: 8px; }
+.work-case-button:hover {
+  background: color-mix(in srgb, var(--accent) 15%, var(--paper));
+  border-color: var(--accent);
+}
+.work-case-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .work-case-button { width: 100%; }
+  .work-case-arrow { margin-left: auto; }
+}
+@media (prefers-reduced-motion: reduce) { .work-case-button { transition: none; } }

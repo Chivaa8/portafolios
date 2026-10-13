@@ -68,3 +68,11 @@ for (const language of ['es','ca','en']) for (const key of ['bio','it','booka'])
 }
 assert.equal((fs.readFileSync(path.join(__dirname,'portfolio.html'),'utf8').match(/data-work-case="/g)||[]).length,3);
 console.log('PASS: three translated work cases and preserved terminal contributions.');
+
+const classicHtml = fs.readFileSync(path.join(__dirname,'portfolio.html'),'utf8');
+for (const key of ['booka','bio','it']) {
+ assert(classicHtml.includes(`data-work-case="${key}"`));
+}
+assert.equal((classicHtml.match(/class="work-case-actions"/g)||[]).length,3);
+assert.equal((classicHtml.match(/class="work-case-icon"/g)||[]).length,3);
+console.log('PASS: three separate action rows and accessible illustrated buttons.');
