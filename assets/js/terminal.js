@@ -45,7 +45,7 @@ function localizedCommands(language) {
   for (const key of ['whoami','experiencia','skills','diagnostico','referencias','contacto']) if (ui[key]) result[key] = ui[key];
   const data = typeof window !== 'undefined' && window.portfolioData;
   if (data) {
-    const c = data.copy[language];
+    const c = {...data.copy[language], ...data.terminalContributions[language]};
     result.formacion = Object.values(data.educationDetails[language]).map(item => `${item.title}\n${item.center} · ${item.period}\n${item.description}`).join('\n\n') + '\n\n' + ui.languages;
     result.proyectos = [ui.nav[5].toUpperCase(), c.repoPermisos,c.repoHeatmap,c.repoFlota,c.repoOnePiece,c.repoCatalogo].join('\n\n');
     const dates = {

@@ -261,7 +261,7 @@ const openProjectDialog = (key) => {
   const dialog = document.querySelector("[data-project-dialog]");
   dialog.querySelector("[data-project-title]").textContent = data.title;
   dialog.querySelector("[data-project-grade]").textContent = data.grade;
-  dialog.querySelector("[data-project-description]").textContent = key === "heatmap" ? copy[getLang()].repoHeatmap : data.description;
+  dialog.querySelector("[data-project-description]").textContent = data.description;
   dialog.querySelector("[data-project-note]").textContent = data.note;
   dialog.querySelector("[data-project-note]").hidden = !data.note;
   dialog.querySelector("[data-project-context]").textContent = data.context || "";
@@ -372,3 +372,17 @@ setLang(['es', 'ca', 'en'].includes(initialLanguage) ? initialLanguage : getLang
 renderSkills();
 renderTags();
 setThemeButton(document.documentElement.dataset.theme === "dark");
+
+document.querySelectorAll('[data-work-case]').forEach(button => button.addEventListener('click', event => {
+  event.stopPropagation();
+  const cases = window.portfolioData.workCases[getLang()];
+  const item = cases[button.dataset.workCase];
+  const dialog = document.querySelector('[data-work-case-dialog]');
+  dialog.querySelector('h2').textContent = item.title;
+  for (const key of ['problem', 'solution', 'approach']) {
+    dialog.querySelector(`[data-case-heading="${key}"]`).textContent = cases[key];
+    dialog.querySelector(`[data-case-text="${key}"]`).textContent = item[key];
+  }
+  dialog.querySelector('.dialog-close').setAttribute('aria-label', {es:'Cerrar',ca:'Tancar',en:'Close'}[getLang()]);
+  openDialog(dialog);
+}));
