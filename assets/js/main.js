@@ -408,28 +408,37 @@ renderSkills();
 renderTags();
 setThemeButton(document.documentElement.dataset.theme === "dark");
 
-document.querySelectorAll('[data-work-case]').forEach(button => button.addEventListener('click', event => {
-  event.stopPropagation();
+const renderWorkCase = (key, stage = 0) => {
   const cases = window.portfolioData.workCases[getLang()];
-  const item = cases[button.dataset.workCase];
+  const item = key === "booka" ? cases.booka.stages[stage] : cases[key];
   const dialog = document.querySelector('[data-work-case-dialog]');
   const caseMeta = {
     bio: ['IGTP', ['R', 'Shiny', 'Linux', 'Heatmaps', 'Volcano Plot'], 'assets/docs/carta-recomendacion-oriol.pdf'],
     it: ['KYMOS', ['Soporte IT', 'Tickets', 'Documentación', 'WDS'], 'assets/docs/carta-recomendacion.pdf'],
     booka: ['BOOKA', ['Next.js', 'React', 'TypeScript', 'Git'], 'assets/docs/Carta_Recomendacion_Oriol_Chiva.pdf']
-  }[button.dataset.workCase];
+  }[key];
   const labels = {
     es: ['EXPERIENCIA EN DETALLE', 'RESPALDO PROFESIONAL', 'Consultar recomendación', 'Tecnologías'],
     ca: ['EXPERIÈNCIA EN DETALL', 'AVAL PROFESSIONAL', 'Consultar recomanació', 'Tecnologies'],
     en: ['EXPERIENCE IN DETAIL', 'PROFESSIONAL REFERENCE', 'Read recommendation', 'Technologies']
   }[getLang()];
+  const switcher = dialog.querySelector('[data-case-stages]');
+  switcher.hidden = key !== 'booka';
+  if (key === 'booka') {
+    switcher.querySelectorAll('button').forEach((button, index) => {
+      button.textContent = cases.booka.stages[index].label;
+      button.setAttribute('aria-pressed', String(index === stage));
+    });
+  }
   dialog.querySelector('h2').textContent = item.title;
   dialog.querySelector('[data-case-eyebrow]').textContent = labels[0];
   dialog.querySelector('[data-case-company]').textContent = caseMeta[0];
   const tools = dialog.querySelector('[data-case-tools]');
   tools.replaceChildren(); tools.setAttribute('aria-label', labels[3]);
   const toolTranslations = {ca: {'Soporte IT':'Suport IT', 'Tickets':'Tiquets', 'Documentación':'Documentació'}, en: {'Soporte IT':'IT Support', 'Tickets':'Tickets', 'Documentación':'Documentation'}};
-  caseMeta[1].forEach(tool => {
+  const stageTools = key === 'booka' && stage === 0 ? [] : caseMeta[1];
+  tools.hidden = stageTools.length === 0;
+  stageTools.forEach(tool => {
     const chip = document.createElement('span');
     chip.textContent = toolTranslations[getLang()]?.[tool] || tool;
     tools.append(chip);
@@ -442,6 +451,57 @@ document.querySelectorAll('[data-work-case]').forEach(button => button.addEventL
     dialog.querySelector(`[data-case-text="${key}"]`).textContent = item[key];
   }
   dialog.querySelector('.dialog-close').setAttribute('aria-label', {es:'Cerrar',ca:'Tancar',en:'Close'}[getLang()]);
-  openDialog(dialog);
-  dialog.scrollTop = 0;
+  if (!dialog.open) openDialog(dialog);
+};
+
+document.querySelectorAll('[data-work-case]').forEach(button => button.addEventListener('click', event => {
+  event.stopPropagation();
+  renderWorkCase(button.dataset.workCase);
+  document.querySelector('[data-work-case-dialog]').scrollTop = 0;
 }));
+document.querySelectorAll('[data-case-stage]').forEach(button => button.addEventListener('click', () => {
+  renderWorkCase('booka', Number(button.dataset.caseStage));
+}));
+
+
+const catalogue = document.querySelector('.project-list');
+const projectCards = [...catalogue.querySelectorAll('.project-card')];
+const previousProject = document.querySelector('[data-project-prev]');
+const nextProject = document.querySelector('[data-project-next]');
+const currentProject = () => projectCards.reduce((nearest, card, index) =>
+  Math.abs(card.getBoundingClientRect().left - catalogue.getBoundingClientRect().left) <
+  Math.abs(projectCards[nearest].getBoundingClientRect().left - catalogue.getBoundingClientRect().left) ? index : nearest, 0);
+const projectPagination = document.querySelector('[data-project-pagination]');
+projectCards.forEach((card, index) => {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.setAttribute('aria-label', card.querySelector('h3').textContent);
+  button.setAttribute('aria-controls', 'project-catalogue');
+  button.addEventListener('click', () => moveProject(index - currentProject()));
+  projectPagination.append(button);
+});
+const updateCatalogue = () => {
+  const index = currentProject();
+  [...projectPagination.children].forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
+  previousProject.disabled = index === 0;
+  nextProject.disabled = index === projectCards.length - 1;
+  document.querySelector('[data-project-position]').textContent = `${index + 1} / ${projectCards.length}`;
+};
+const moveProject = direction => {
+  const index = Math.max(0, Math.min(projectCards.length - 1, currentProject() + direction));
+  catalogue.scrollTo({left: projectCards[index].offsetLeft - projectCards[0].offsetLeft,
+    behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+};
+previousProject.addEventListener('click', () => moveProject(-1));
+nextProject.addEventListener('click', () => moveProject(1));
+catalogue.addEventListener('scroll', updateCatalogue, {passive: true});
+new ResizeObserver(updateCatalogue).observe(catalogue);
+catalogue.addEventListener('keydown', event => {
+  if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+  event.preventDefault();
+  const direction = event.key === 'ArrowLeft' ? -1 : 1;
+  const index = Math.max(0, Math.min(projectCards.length - 1, currentProject() + direction));
+  moveProject(direction);
+  projectCards[index].focus({preventScroll: true});
+});
+updateCatalogue();

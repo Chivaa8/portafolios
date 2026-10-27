@@ -54,9 +54,10 @@ function localizedCommands(language) {
       en: ['January - April 2023', 'September 2025 - present', '6 - 23 October 2025 · 58.5 hours', 'April 2020 - present', 'Bioinformatics internship', 'Warehouse associate', 'Logistics processes and quality control.']
     }[language];
     result.experiencia = [
-      'KYMOS / Kymos Group · IT Support', dates[0], c.itPoint1, c.itPoint2, c.itPoint3, '',
-      'BOOKA / 6Profiles Consulting S.L.', dates[1], c.bookaContribution, c.profilesPoint1, c.profilesPoint2, c.profilesPoint3, '',
+      {es:'EXPERIENCIA · Inicio más reciente primero',ca:'EXPERIÈNCIA · Inici més recent primer',en:'EXPERIENCE · Most recent start first'}[language], '',
       'IGTP · ' + dates[4], dates[2], c.bioPoint1, c.bioPoint2, c.bioPoint3, '',
+      'BOOKA / 6Profiles Consulting S.L.', dates[1], c.bookaProgression, c.bookaContribution, c.profilesPoint1, c.profilesPoint2, c.profilesPoint3, '',
+      'KYMOS / Kymos Group · IT Support', dates[0], c.itPoint1, c.itPoint2, c.itPoint3, '',
       'AMAZON · ' + dates[5], dates[3], dates[6]
     ].join('\n');
   }
